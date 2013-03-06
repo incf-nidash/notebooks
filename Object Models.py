@@ -43,6 +43,12 @@
 
 # <markdowncell>
 
+# ### Basic Provenance data model
+# 
+# <img src="http://www.w3.org/TR/prov-o/diagrams/starting-points.svg" />
+
+# <markdowncell>
+
 # ## What is an object model?
 # 
 # An object model represents a collection "through which a program can examine and manipulate some specific parts of its world."
