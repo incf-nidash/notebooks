@@ -39,7 +39,7 @@
 # 
 # ## What is NI-DM?
 # 
-# NI-DM is formulated as a domain specific extension of PROV-DM, but at this point maps identically to PROV-DM and domain extensions are captured as object models on top of PROV-DM.
+# NI-DM is formulated as a domain specific extension of PROV-DM. Currently, NI-DM maps identically to PROV-DM and domain extensions are captured as object models on top of PROV-DM.
 
 # <markdowncell>
 
@@ -55,13 +55,32 @@
 
 # <markdowncell>
 
+# ### What are the advantages of using NI-DM
+# 
+# - Provenance is not an afterthought
+# - Terminology is important
+# - W3C recommendation at this point
+# - Many tools are starting to support the model
+# - Captures data and metadata (about entities, **activities** and agents) within the same context
+# - Simplifies app development
+# - Maps to Semantic Web tools allowing query federation
+# 
+# ### What are the disadvantages of using NI-DM
+# 
+# - A new way of thinking about queries and computation
+# - Current databases are not built for provenance
+# - Current databases are very specifically structured
+# - The transition will require resources, commitment and time
+
+# <markdowncell>
+
 # ## What is an object model?
 # 
 # An object model represents a collection "through which a program can examine and manipulate some specific parts of its world."
 # 
 # ## What are object models in NI-DM?
 # 
-# In the context of NI-DM, object models capture specific relationships between [entities][entity] via [collections][collection] that reflect organization information derived from imaging files (e.g., DICOM, Nifti, MINC), directory structures (e.g., Freesurfer, OpenFMRI), phenotypic data (e.g., neuropsych assessments, csv files) and binary or text files (e.g., SPM.mat, Feat.fsf, aseg.stats).
+# In the context of NI-DM, object models capture specific relationships between [entities][entity] via [collections][collection] that reflect organization information derived from imaging files (e.g., DICOM, Nifti, MINC), directory structures (e.g., Freesurfer, OpenFMRI), phenotypic data (e.g., neuropsych assessments, csv files) and binary or text files (e.g., SPM.mat, Feat.fsf, aseg.stats). The models are associated with appropriate provenance.
 # 
 # [entity]: http://www.w3.org/TR/prov-o/#Entity
 # [collection]: http://www.w3.org/TR/prov-o/#Collections
@@ -85,7 +104,7 @@
 #     - fs:subject_id : a participant identifier
 #     - fs:relative_path : location of file from the root of the subject directory structure
 # 
-# note: 'fs' is a namespace prefix that allows for a shorthand notation of the full URI (e.g., 'http://surfer.nmr.mgh.harvard.edu/fswiki/terms/0.1/subject_id)' 
+# note: `fs:` is a namespace prefix that allows for a shorthand notation of the full URI (e.g., `http://surfer.nmr.mgh.harvard.edu/fswiki/terms/0.1/subject_id`) 
 
 # <markdowncell>
 
@@ -93,7 +112,7 @@
 # 
 # This example uses two Python libraries that you will need to install
 # 
-#     - Nipype: http://nipy.sourceforge.net/nipype/
+#     - Nipype: http://nipy.org/nipype/
 #     - PROV: https://github.com/trungdong/prov
 
 # <codecell>
@@ -160,6 +179,17 @@ def create_entity(graph, fullpath, root, subject_id, basedir):
     id = fs[md5.new(subject_id + relpath).hexdigest()]
     graph.entity(id, obj_attr)
     return id
+
+# <markdowncell>
+
+# ### Terms introduced
+# 
+#     - relative_path
+#     - file
+#     - md5sum
+#     - fs: mri, label, stats, scripts, touch  - from directory names 
+#     - aparc, a2005s, a2009s, exvivo, aseg, desikan_killiany
+#     - statistics
 
 # <markdowncell>
 
@@ -317,4 +347,25 @@ HTML(result.content)
              ?membersOfProvCollection fs:structure ?structureName . 
              ?membersOfProvCollection fs:value ?structureGV .
         } ''' % (subject_id)
+
+# <markdowncell>
+
+# ### Mapping XCEDE primitives to NI-DM
+# 
+# The XCEDE XML schema allows for storing information in the context of a flexible and extensible experiment hierarchy. 
+# 
+# It accommodates arbitrary configurations centered around Project, Subject, Visit, Study, Episode, and Acquisition objects, as well as limited information about data provenance. Effectively defining a hierarchy of relationships.
+# 
+# It is ill-suited for modeling and querying across complex derived data created from many of today’s workflow systems.
+
+# <markdowncell>
+
+# ### Mappings
+# 
+# 
+# - xcede:Project     -> prov:Activity (prov:type = nidm:Project)
+# - xcede:Study       -> prov:Activity (prov:type = nidm:Study, dcterms:subpartOf = some_project)
+# - xcede:Visit       -> prov:Activity (prov:type = nidm:Visit, dcterms:subpartOf = some_study)
+# - xcede:Episode     -> prov:Activity (prov:type = nidm:Episod, dcterms:subpartOf = some_visit)
+# - xcede:Acquisition -> prov:Activity (prov:type = nidm:Acquisition, dcterms:subpartOf = some_episode)
 
