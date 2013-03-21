@@ -68,6 +68,7 @@
 # ### What are the disadvantages of using NI-DM
 # 
 # - A new way of thinking about queries and computation
+# - Requires extensive terminology
 # - Current databases are not built for provenance
 # - Current databases are very specifically structured
 # - The transition will require resources, commitment and time
