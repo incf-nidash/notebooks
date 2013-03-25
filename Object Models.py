@@ -125,61 +125,117 @@ from socket import getfqdn
 
 # PROV API library
 import prov.model as prov
-from nipype.utils.filemanip import hash_infile
+
+def hash_infile(afile, chunk_len=8192):
+    """ Computes md5 hash of a file"""
+    md5hex = None
+    if os.path.isfile(afile):
+        md5obj = md5.md5()
+        fp = file(afile, 'rb')
+        while True:
+            data = fp.read(chunk_len)
+            if not data:
+                break
+            md5obj.update(data)
+        fp.close()
+        md5hex = md5obj.hexdigest()
+    return md5hex
 
 # create namespace references to terms used
 foaf = prov.Namespace("foaf", "http://xmlns.com/foaf/0.1/")
 dcterms = prov.Namespace("dcterms", "http://purl.org/dc/terms/")
 fs = prov.Namespace("fs", "http://surfer.nmr.mgh.harvard.edu/fswiki/terms/0.1/")
 nidm = prov.Namespace("nidm", "http://nidm.nidash.org/terms/0.1/")
+obo = prov.Namespace("obo", "http://purl.obolibrary.org/obo/")
+nif = prov.Namespace("nif", "http://neurolex.org/wiki/")
 
 # <markdowncell>
 
-# ### Define a function that creates a NI-DM Entity
+# ### Define a function that creates a NI-DM Entity for a freesurfer file
 
 # <codecell>
 
-def create_entity(graph, fullpath, root, subject_id, basedir):
+ls -lR /Applications/freesurfer/subjects/bert
+
+# <codecell>
+
+# map FreeSurfer filename parts
+fs_file_map =  [('T1', [nif["nlx_inv_20090243"]]), #3d T1 weighted scan
+                ('lh', [obo["UBERON_0002812"]]), #left cerebral hemisphere
+                ('rh', [obo["UBERON_0002813"]]), # right cerebral hemisphere
+                ('BA.', [obo["UBERON_0013529"]]), #Brodmann area
+                ('BA1.', [obo["UBERON_0006099"]]), #Brodmann area 1
+                ('BA2.', [obo["UBERON_0013533"]]), #Brodmann area 2
+                ('BA3a.', [obo["UBERON_0006100"], #Brodmann area 3a
+                           obo["FMA_74532"]]), #anterior
+                ('BA3b.', [obo["UBERON_0006100"], #Brodmann area 3b
+                           obo["FMA_74533"]]), #posterior
+                ('BA44.', [obo["UBERON_0006481"]]), #Brodmann area 44
+                ('BA45.', [obo["UBERON_0006482"]]), #Brodmann area 45
+                ('BA4a.', [obo["UBERON_0013535"], #Brodmann area 4a
+                           obo["FMA_74532"]]), #anterior
+                ('BA4a.', [obo["UBERON_0013535"], #Brodmann area 4p
+                           obo["FMA_74533"]]), #posterior
+                ('BA6.', [obo["UBERON_0006472"]]), #Brodmann area 6
+                ('V1.', [obo["UBERON_0002436"]]),
+                ('V2.', [obo["UBERON_0006473"]]),
+                ('MT', [fs["MT area"]]),
+                ('entorhinal', [obo["UBERON_0002728"]]),
+                ('exvivo', [fs["exvivo"]]),
+                ('label', [fs["label_file"]]),
+                ('annot', [fs["annotation_file"]]),
+                ('cortex', [obo["UBERON_0000956"]]),
+                ('.stats', [fs["statistic_file"]]),
+                ('aparc.annot', [fs["default_parcellation"]]),
+                ('aparc.a2009s', [fs["a2009s_parcellation"]]),
+                ('.ctab', [fs["color_table"]]),
+               ]
+
+ignore_list = ['bak', 'src', 'tmp', 'trash']
+
+# <codecell>
+
+def create_entity(graph, fs_subject_id, filepath):
     """ Create a PROV entity for a file in a FreeSurfer directory
     """
     # identify FreeSurfer terms based on directory and file names
-    relpath = fullpath.replace(basedir, '').replace(root, '').lstrip('/')
+    _, filename = os.path.split(filepath)
+    relpath = os.path.sep.join(filepath.split(fs_subject_id)[1:]).lstrip(os.path.sep)
     fstypes = relpath.split('/')[:-1]
     additional_types = relpath.split('/')[-1].split('.')
     
-    file_hash = hash_infile(fullpath)
-    if file_hash is None:
+    file_md5_hash = hash_infile(filepath)
+    if file_md5_hash is None:
         print fullpath
 
+    url = "file://%s%s" % (getfqdn(), filepath)
+    url_get = "http://computor.mit.edu:10101/file?file_uri=%s" % url
     # build a NI-DM object 
-    obj_attr = [(prov.PROV["type"], fs[fstype]) for fstype in fstypes] + \
-               [(prov.PROV["label"], "%s:%s" % ('.'.join(fstypes), '.'.join(additional_types))),
+    obj_attr = [(prov.PROV["label"], "%s:%s" % ('.'.join(fstypes), '.'.join(additional_types))),
+                (prov.PROV["label"], "%s" % filename),
                 (fs["relative_path"], "%s" % relpath),
-                (nidm["file"], "file://%s%s" % (getfqdn(), fullpath)),
-                (nidm["md5sum"], "%s" % file_hash),
+                (prov.PROV["location"], prov.Literal(url, prov.XSD["anyURI"])),
+                (obo["MS_1000568"], "%s" % file_md5_hash),
                ]
-    # append approprate FreeSurfer terms
-    if 'lh' in additional_types:
-        obj_attr.append((fs["hemisphere"], "left"))
-    if 'rh' in additional_types:
-        obj_attr.append((fs["hemisphere"], "right"))
-    if 'aparc' in additional_types:
-        obj_attr.append((prov.PROV["type"], fs["aparc"]))
-    if 'a2005s' in additional_types:
-        obj_attr.append((prov.PROV["type"], fs["a2005s"]))                
-    if 'a2009s' in additional_types:
-        obj_attr.append((prov.PROV["type"], fs["a2009s"]))                
-    if 'exvivo' in relpath:
-        obj_attr.append((prov.PROV["type"], fs["exvivo"]))                
-    if 'aseg' in additional_types:
-        obj_attr.append((prov.PROV["type"], fs["aseg"]))                
-    if 'aparc.stats' in relpath:
-        obj_attr.append((prov.PROV["type"], fs["desikan_killiany"]))                
-    if 'stats' in fstypes and 'stats' in additional_types:
-        obj_attr.append((prov.PROV["type"], fs["statistics"]))
-    id = fs[md5.new(subject_id + relpath).hexdigest()]
-    graph.entity(id, obj_attr)
-    return id
+
+    for key, uris in fs_file_map:
+        if key in filename:
+            obj_attr.append((prov.PROV["label"], key))
+            for uri in uris:
+                obj_attr.append((prov.PROV["type"], uri))
+    id = md5.new(fs_subject_id + relpath + file_md5_hash).hexdigest()
+    return graph.entity(fs['e/' + id], obj_attr)
+    #return id
+
+# <codecell>
+
+g = prov.ProvBundle()
+e1 = create_entity(g, "bert", "/Applications/freesurfer/subjects/bert/mri/T1.mgz")
+
+# <codecell>
+
+id = e1.get_identifier()
+print e1.get_provn()
 
 # <markdowncell>
 
@@ -188,8 +244,7 @@ def create_entity(graph, fullpath, root, subject_id, basedir):
 #     - relative_path
 #     - file
 #     - md5sum
-#     - fs: mri, label, stats, scripts, touch  - from directory names 
-#     - aparc, a2005s, a2009s, exvivo, aseg, desikan_killiany
+#     - aparc, a2005s, a2009s, exvivo
 #     - statistics
 
 # <markdowncell>
