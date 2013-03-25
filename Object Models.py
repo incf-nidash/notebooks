@@ -179,7 +179,7 @@ fs_file_map =  [('T1', [nif["nlx_inv_20090243"]]), #3d T1 weighted scan
                 ('BA6.', [obo["UBERON_0006472"]]), #Brodmann area 6
                 ('V1.', [obo["UBERON_0002436"]]),
                 ('V2.', [obo["UBERON_0006473"]]),
-                ('MT', [fs["MT area"]]),
+                ('MT', [fs["MT_area"]]),
                 ('entorhinal', [obo["UBERON_0002728"]]),
                 ('exvivo', [fs["exvivo"]]),
                 ('label', [fs["label_file"]]),
@@ -200,7 +200,7 @@ def create_entity(graph, fs_subject_id, filepath):
     """
     # identify FreeSurfer terms based on directory and file names
     _, filename = os.path.split(filepath)
-    relpath = os.path.sep.join(filepath.split(fs_subject_id)[1:]).lstrip(os.path.sep)
+    relpath = filepath.split(fs_subject_id)[1].lstrip(os.path.sep)
     fstypes = relpath.split('/')[:-1]
     additional_types = relpath.split('/')[-1].split('.')
     
@@ -220,7 +220,7 @@ def create_entity(graph, fs_subject_id, filepath):
 
     for key, uris in fs_file_map:
         if key in filename:
-            obj_attr.append((prov.PROV["label"], key))
+            obj_attr.append((prov.PROV["label"], key.rstrip('.')))
             for uri in uris:
                 obj_attr.append((prov.PROV["type"], uri))
     id = md5.new(fs_subject_id + relpath + file_md5_hash).hexdigest()
@@ -253,19 +253,16 @@ print e1.get_provn()
 
 # <codecell>
 
-def freesurfer2provgraph(g, dirname, basedir, n_items=100000):
+def encode_fs_directory(g, basedir, project_id, subject_id, n_items=100000):
     """ Convert a FreeSurfer directory to a PROV graph
     """
-    subject_id = dirname.rstrip('/').split('/')[-1]
-    project_string = '-'.join(dirname.replace(basedir, '').rstrip('/').split('/')[1:-1])
     # directory collection/catalog
-    collection_hash = md5.new(project_string + ':' + subject_id).hexdigest()
+    collection_hash = md5.new(project_id + ':' + subject_id).hexdigest()
     fsdir_collection = g.collection(fs[collection_hash])
     fsdir_collection.add_extra_attributes({prov.PROV['type']: fs['directory'],
-                                           fs['subject_id']: subject_id,
-                                           nidm['annotation']: project_string})
+                                           fs['subject_id']: subject_id})
     i = 0;
-    for dirpath, dirnames, filenames in os.walk(os.path.realpath(os.path.join(basedir, dirname))):
+    for dirpath, dirnames, filenames in os.walk(os.path.realpath(basedir)):
         for filename in sorted(filenames):
             if filename.startswith('.'):
                 continue
@@ -276,9 +273,16 @@ def freesurfer2provgraph(g, dirname, basedir, n_items=100000):
             if not os.path.isfile(file2encode):
                 print "%s not a file" % file2encode
                 continue
+            ignore_key_found = False
+            for key in ignore_list:
+                if key in file2encode:
+                    ignore_key_found = True
+                    continue
+            if ignore_key_found:
+                continue
             try:
-                id = create_entity(g, file2encode, dirname[2:], subject_id, basedir)
-                g.hadMember(fsdir_collection, id)
+                entity = create_entity(g, subject_id, file2encode)
+                g.hadMember(fsdir_collection, entity.get_identifier())
             except IOError, e:
                 print e
     return g
@@ -292,30 +296,32 @@ def freesurfer2provgraph(g, dirname, basedir, n_items=100000):
 # <codecell>
 
 # location of FreeSurfer $SUBJECTS_DIR
-basedir = '/mindhive/xnat/surfaces/'
+basedir = '/Applications/freesurfer/subjects/bert'
+subject_id = 'bert'
+project_id = 'nidm'
+filename = 'bert.provn'
 
 from subprocess import Popen, PIPE
 
 # location of the ProvToolBox commandline conversion utility
 pc = '/mindhive/gablab/satra/ProvToolbox/toolbox/target/appassembler/bin/provconvert'
-for dirname in dirnames:
-    name = '-'.join(dirname.rstrip('/').split('/')[1:])
-    filename = '../store/%s.provn' % name
-    if not os.path.exists('%s.ttl' % filename):
-        graph = prov.ProvBundle()
-        graph.add_namespace(foaf)
-        graph.add_namespace(dcterms)
-        graph.add_namespace(fs)
-        graph.add_namespace(nidm)
-        freesurfer2provgraph(graph, dirname)
-        print dirname
-        with open(filename, 'wt') as fp:
-            fp.writelines(graph.get_provn())
-        o, e = Popen('%s -infile %s -outfile %s.ttl' % (pc, filename, filename), stdout=PIPE, 
-                     stderr=PIPE, shell=True).communicate()
-        print('converted %s' % filename)
-    else:
-        print "%s exists" % filename
+graph = prov.ProvBundle()
+graph.add_namespace(foaf)
+graph.add_namespace(dcterms)
+graph.add_namespace(fs)
+graph.add_namespace(nidm)
+graph.add_namespace(obo)
+graph.add_namespace(nif)
+
+graph = encode_fs_directory(graph, basedir, project_id, subject_id)
+with open(filename, 'wt') as fp:
+    fp.writelines(graph.get_provn())
+#o, e = Popen('%s -infile %s -outfile %s.ttl' % (pc, filename, filename), 
+#             stdout=PIPE, stderr=PIPE, shell=True).communicate()
+
+# <codecell>
+
+cat bert.provn
 
 # <markdowncell>
 
