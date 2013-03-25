@@ -157,6 +157,10 @@ nif = prov.Namespace("nif", "http://neurolex.org/wiki/")
 
 ls -lR /Applications/freesurfer/subjects/bert
 
+# <markdowncell>
+
+# ### Create map from FreeSurfer terms to ontology-based vocabularies
+
 # <codecell>
 
 # map FreeSurfer filename parts
@@ -193,6 +197,10 @@ fs_file_map =  [('T1', [nif["nlx_inv_20090243"]]), #3d T1 weighted scan
 
 ignore_list = ['bak', 'src', 'tmp', 'trash']
 
+# <markdowncell>
+
+# ### Convert a file location to a NI-DM entity
+
 # <codecell>
 
 def create_entity(graph, fs_subject_id, filepath):
@@ -226,6 +234,10 @@ def create_entity(graph, fs_subject_id, filepath):
     id = md5.new(fs_subject_id + relpath + file_md5_hash).hexdigest()
     return graph.entity(fs['e/' + id], obj_attr)
     #return id
+
+# <markdowncell>
+
+# ### Example of converting a single file
 
 # <codecell>
 
