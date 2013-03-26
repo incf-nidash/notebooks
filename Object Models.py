@@ -160,6 +160,8 @@ ls -lR /Applications/freesurfer/subjects/bert
 # <markdowncell>
 
 # ### Create map from FreeSurfer terms to ontology-based vocabularies
+# 
+# This is a temporary association of filenames in freesurfer directories
 
 # <codecell>
 
@@ -178,7 +180,7 @@ fs_file_map =  [('T1', [nif["nlx_inv_20090243"]]), #3d T1 weighted scan
                 ('BA45.', [obo["UBERON_0006482"]]), #Brodmann area 45
                 ('BA4a.', [obo["UBERON_0013535"], #Brodmann area 4a
                            obo["FMA_74532"]]), #anterior
-                ('BA4a.', [obo["UBERON_0013535"], #Brodmann area 4p
+                ('BA4p.', [obo["UBERON_0013535"], #Brodmann area 4p
                            obo["FMA_74533"]]), #posterior
                 ('BA6.', [obo["UBERON_0006472"]]), #Brodmann area 6
                 ('V1.', [obo["UBERON_0002436"]]),
