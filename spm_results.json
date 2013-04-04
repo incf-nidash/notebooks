@@ -1,0 +1,1345 @@
+{
+  "hadMember": {
+    "_:hM40": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_12"
+      ]
+    },
+    "_:hM41": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_13"
+      ]
+    },
+    "_:hM42": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_14"
+      ]
+    },
+    "_:hM43": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_15"
+      ]
+    },
+    "_:hM34": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_6"
+      ]
+    },
+    "_:hM33": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_5"
+      ]
+    },
+    "_:hM36": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_8"
+      ]
+    },
+    "_:hM35": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_7"
+      ]
+    },
+    "_:hM38": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_10"
+      ]
+    },
+    "_:hM37": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_9"
+      ]
+    },
+    "_:hM39": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_11"
+      ]
+    },
+    "_:hM50": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_22"
+      ]
+    },
+    "_:hM53": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "peak_level_stats"
+      ]
+    },
+    "_:hM54": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "cluster_level_stats"
+      ]
+    },
+    "_:hM51": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_23"
+      ]
+    },
+    "_:hM52": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_24"
+      ]
+    },
+    "_:hM9": {
+      "prov:collection": "set_level_collection",
+      "prov:entity": [
+        "set_level_p"
+      ]
+    },
+    "_:hM8": {
+      "prov:collection": "spm_results_metadata",
+      "prov:entity": [
+        "expected_clusters"
+      ]
+    },
+    "_:hM7": {
+      "prov:collection": "spm_results_metadata",
+      "prov:entity": [
+        "expected_voxels"
+      ]
+    },
+    "_:hM47": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_19"
+      ]
+    },
+    "_:hM6": {
+      "prov:collection": "spm_results_metadata",
+      "prov:entity": [
+        "extent_threshold_collection"
+      ]
+    },
+    "_:hM46": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_18"
+      ]
+    },
+    "_:hM5": {
+      "prov:collection": "spm_results_metadata",
+      "prov:entity": [
+        "height_threshold_collection"
+      ]
+    },
+    "_:hM45": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_17"
+      ]
+    },
+    "_:hM4": {
+      "prov:collection": "extent_threshold_collection",
+      "prov:entity": [
+        "extent_threshold_param2"
+      ]
+    },
+    "_:hM44": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_16"
+      ]
+    },
+    "_:hM3": {
+      "prov:collection": "extent_threshold_collection",
+      "prov:entity": [
+        "extent_threshold_param1"
+      ]
+    },
+    "_:hM2": {
+      "prov:collection": "height_threshold_collection",
+      "prov:entity": [
+        "height_threshold_param2"
+      ]
+    },
+    "_:hM1": {
+      "prov:collection": "height_threshold_collection",
+      "prov:entity": [
+        "height_threshold_param1"
+      ]
+    },
+    "_:hM49": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_21"
+      ]
+    },
+    "_:hM48": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_20"
+      ]
+    },
+    "_:hM20": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_5"
+      ]
+    },
+    "_:hM21": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_6"
+      ]
+    },
+    "_:hM59": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "spm_results_metadata"
+      ]
+    },
+    "_:hM10": {
+      "prov:collection": "set_level_collection",
+      "prov:entity": [
+        "set_level_c"
+      ]
+    },
+    "_:hM55": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "peak_level_stats"
+      ]
+    },
+    "_:hM56": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "cluster_level_stats"
+      ]
+    },
+    "_:hM19": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_4"
+      ]
+    },
+    "_:hM57": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "coordinates"
+      ]
+    },
+    "_:hM58": {
+      "prov:collection": "spm_contrast_results",
+      "prov:entity": [
+        "set_level_collection"
+      ]
+    },
+    "_:hM16": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_0"
+      ]
+    },
+    "_:hM15": {
+      "prov:collection": "coordinates",
+      "prov:entity": [
+        "coord_4"
+      ]
+    },
+    "_:hM18": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_2"
+      ]
+    },
+    "_:hM17": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_1"
+      ]
+    },
+    "_:hM12": {
+      "prov:collection": "coordinates",
+      "prov:entity": [
+        "coord_1"
+      ]
+    },
+    "_:hM11": {
+      "prov:collection": "coordinates",
+      "prov:entity": [
+        "coord_0"
+      ]
+    },
+    "_:hM14": {
+      "prov:collection": "coordinates",
+      "prov:entity": [
+        "coord_3"
+      ]
+    },
+    "_:hM13": {
+      "prov:collection": "coordinates",
+      "prov:entity": [
+        "coord_2"
+      ]
+    },
+    "_:hM31": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_3"
+      ]
+    },
+    "_:hM32": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_4"
+      ]
+    },
+    "_:hM30": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_2"
+      ]
+    },
+    "_:hM29": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_1"
+      ]
+    },
+    "_:hM28": {
+      "prov:collection": "peak_level_stats",
+      "prov:entity": [
+        "peak_0"
+      ]
+    },
+    "_:hM27": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_14"
+      ]
+    },
+    "_:hM26": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_13"
+      ]
+    },
+    "_:hM25": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_12"
+      ]
+    },
+    "_:hM24": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_10"
+      ]
+    },
+    "_:hM23": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_9"
+      ]
+    },
+    "_:hM22": {
+      "prov:collection": "cluster_level_stats",
+      "prov:entity": [
+        "cluster_8"
+      ]
+    }
+  },
+  "entity": {
+    "peak_15": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.0",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Uncorr_p"
+    },
+    "peak_16": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.994",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FWEcorr_p"
+    },
+    "spm_contrast_results": [
+      {
+        "prov:type": [
+          {
+            "$": "spm:spm_contrast_results",
+            "type": "xsd:QName"
+          },
+          {
+            "$": "prov:Collection",
+            "type": "xsd:QName"
+          }
+        ]
+      },
+      {
+        "prov:type": [
+          {
+            "$": "spm:spm_contrast_results",
+            "type": "xsd:QName"
+          },
+          {
+            "$": "prov:Collection",
+            "type": "xsd:QName"
+          }
+        ]
+      }
+    ],
+    "peak_17": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FDR",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.904",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FDRcorr_p"
+    },
+    "peak_18": {
+      "prov:type": [
+        {
+          "$": "neurolex:t-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.34",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_T"
+    },
+    "cluster_12": {
+      "prov:type": [
+        {
+          "$": "neurolex:VolumeInVoxels",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:cluster-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[]",
+        "type": "xsd:string"
+      },
+      "prov:label": "cluster_level_Ke"
+    },
+    "peak_11": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.756",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FWEcorr_p"
+    },
+    "cluster_13": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[]",
+        "type": "xsd:string"
+      },
+      "prov:label": "cluster_level_Uncorr_p"
+    },
+    "peak_12": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FDR",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.464",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FDRcorr_p"
+    },
+    "cluster_10": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.145",
+        "type": "xsd:float"
+      },
+      "prov:label": "cluster_level_FWEcorr_p"
+    },
+    "peak_13": {
+      "prov:type": [
+        {
+          "$": "neurolex:t-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.78",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_T"
+    },
+    "peak_14": {
+      "prov:type": [
+        {
+          "$": "neurolex:z-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.76",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Z"
+    },
+    "cluster_14": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[]",
+        "type": "xsd:string"
+      },
+      "prov:label": "cluster_level_FWEcorr_p"
+    },
+    "peak_19": {
+      "prov:type": [
+        {
+          "$": "neurolex:z-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.33",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Z"
+    },
+    "peak_21": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.997",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FWEcorr_p"
+    },
+    "peak_20": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.0010",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Uncorr_p"
+    },
+    "height_threshold_param2": {
+      "prov:type": [
+        {
+          "$": "spm:height_threshold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_statistic",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.0010",
+        "type": "xsd:float"
+      },
+      "prov:label": "Height_Threshold"
+    },
+    "height_threshold_param1": {
+      "prov:type": [
+        {
+          "$": "spm:height_threshold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:t-statistic",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.1",
+        "type": "xsd:float"
+      },
+      "prov:label": "Height Threshold"
+    },
+    "coord_0": {
+      "prov:type": [
+        {
+          "$": "neurolex:coordinate",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "nidm:units",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[48, 42,0]",
+        "type": "xsd:string"
+      },
+      "prov:label": "mm_mm_mm"
+    },
+    "coord_1": {
+      "prov:type": [
+        {
+          "$": "neurolex:coordinate",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "nidm:units",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[54, 36,-12]",
+        "type": "xsd:string"
+      },
+      "prov:label": "mm_mm_mm"
+    },
+    "peak_24": {
+      "prov:type": [
+        {
+          "$": "neurolex:z-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.29",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Z"
+    },
+    "height_threshold_collection": {
+      "prov:type": [
+        {
+          "$": "spm:Height_Threshold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "peak_22": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FDR",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.904",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FDRcorr_p"
+    },
+    "peak_23": {
+      "prov:type": [
+        {
+          "$": "neurolex:t-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.3",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_T"
+    },
+    "coord_4": {
+      "prov:type": [
+        {
+          "$": "neurolex:coordinate",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "nidm:units",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[38, 52,-30]",
+        "type": "xsd:string"
+      },
+      "prov:label": "mm_mm_mm"
+    },
+    "coord_2": {
+      "prov:type": [
+        {
+          "$": "neurolex:coordinate",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "nidm:units",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[-20, 52,32]",
+        "type": "xsd:string"
+      },
+      "prov:label": "mm_mm_mm"
+    },
+    "coord_3": {
+      "prov:type": [
+        {
+          "$": "neurolex:coordinate",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "nidm:units",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[54, 36,-12]",
+        "type": "xsd:string"
+      },
+      "prov:label": "mm_mm_mm"
+    },
+    "set_level_p": {
+      "prov:type": [
+        {
+          "$": "spm:set-level",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[]",
+        "type": "xsd:string"
+      },
+      "prov:label": "set_level_p"
+    },
+    "peak_1": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.728",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FWEcorr_p"
+    },
+    "peak_0": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.0",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Uncorr_p"
+    },
+    "peak_3": {
+      "prov:type": [
+        {
+          "$": "neurolex:t-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.8",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_T"
+    },
+    "expected_voxels": {
+      "prov:type": [
+        {
+          "$": "spm:expected_voxels",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:VolumeInVoxels",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:voxel",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "60.632",
+        "type": "xsd:float"
+      },
+      "prov:label": "Expected_voxels_per_cluster"
+    },
+    "peak_2": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FDR",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.464",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FDRcorr_p"
+    },
+    "peak_5": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.0",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Uncorr_p"
+    },
+    "extent_threshold_param2": {
+      "prov:type": [
+        {
+          "$": "spm:extent_threshold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_statistic",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "1.0",
+        "type": "xsd:float"
+      },
+      "prov:label": "Extent_Threshold"
+    },
+    "peak_4": {
+      "prov:type": [
+        {
+          "$": "neurolex:z-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.79",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Z"
+    },
+    "extent_threshold_param1": {
+      "prov:type": [
+        {
+          "$": "spm:extent_threshold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:threhold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:voxel",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0",
+        "type": "xsd:int"
+      },
+      "prov:label": "Extent Threshold"
+    },
+    "peak_7": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FDR",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.904",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FDRcorr_p"
+    },
+    "peak_6": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.994",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_FWEcorr_p"
+    },
+    "peak_9": {
+      "prov:type": [
+        {
+          "$": "neurolex:z-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.33",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Z"
+    },
+    "peak_8": {
+      "prov:type": [
+        {
+          "$": "neurolex:t-statistic",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:peak-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "3.34",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_T"
+    },
+    "set_level_c": {
+      "prov:type": [
+        {
+          "$": "spm:set-level",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:cluster",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[]",
+        "type": "xsd:string"
+      },
+      "prov:label": "set_level_c"
+    },
+    "cluster_level_stats": {
+      "prov:type": [
+        {
+          "$": "spm:cluster-level",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "cluster_9": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.016",
+        "type": "xsd:float"
+      },
+      "prov:label": "cluster_level_Uncorr_p"
+    },
+    "cluster_8": {
+      "prov:type": [
+        {
+          "$": "neurolex:VolumeInVoxels",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:cluster-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "380",
+        "type": "xsd:int"
+      },
+      "prov:label": "cluster_level_Ke"
+    },
+    "cluster_5": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "",
+        "type": "xsd:string"
+      },
+      "prov:label": "cluster_level_Uncorr_p"
+    },
+    "cluster_6": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "",
+        "type": "xsd:string"
+      },
+      "prov:label": "cluster_level_FWEcorr_p"
+    },
+    "extent_threshold_collection": {
+      "prov:type": [
+        {
+          "$": "spm:Extent_Threshold",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "set_level_collection": {
+      "prov:type": [
+        {
+          "$": "spm:set-level",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "spm_results_metadata": {
+      "prov:type": [
+        {
+          "$": "spm:spm_results_metadata",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "cluster_4": {
+      "prov:type": [
+        {
+          "$": "neurolex:VolumeInVoxels",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:cluster-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "[]",
+        "type": "xsd:string"
+      },
+      "prov:label": "cluster_level_Ke"
+    },
+    "cluster_2": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:FWE",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.831",
+        "type": "xsd:float"
+      },
+      "prov:label": "cluster_level_FWEcorr_p"
+    },
+    "cluster_1": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.187",
+        "type": "xsd:float"
+      },
+      "prov:label": "cluster_level_Uncorr_p"
+    },
+    "cluster_0": {
+      "prov:type": [
+        {
+          "$": "neurolex:VolumeInVoxels",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:cluster-level",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "99",
+        "type": "xsd:int"
+      },
+      "prov:label": "cluster_level_Ke"
+    },
+    "coordinates": {
+      "prov:type": [
+        {
+          "$": "spm:mm_mm_mm",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "expected_clusters": {
+      "prov:type": [
+        {
+          "$": "spm:expected_clusters",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:cluster",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:voxel",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "9.51",
+        "type": "xsd:float"
+      },
+      "prov:label": "Expected_number_of_clusters"
+    },
+    "peak_level_stats": {
+      "prov:type": [
+        {
+          "$": "spm:peak-level",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "peak_10": {
+      "prov:type": [
+        {
+          "$": "neurolex:p-value",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "neurolex:uncorrected_p-value",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:value": {
+        "$": "0.0",
+        "type": "xsd:float"
+      },
+      "prov:label": "peak_level_Uncorr_p"
+    }
+  },
+  "prefix": {
+    "nidm": "http://nidm.nidash.org/",
+    "spm": "www.fil.ion.ucl.ac.uk/spm/",
+    "neurolex": "http://neurolex.org/wiki/Main_Page/"
+  }
+}
