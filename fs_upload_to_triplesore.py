@@ -158,7 +158,7 @@ def encode_fs_directory(g, basedir, project_id, subject_id, n_items=100000):
 def to_graph(subject_specific_dir, project_id):
     # location of FreeSurfer $SUBJECTS_DIR
     basedir = os.path.abspath(subject_specific_dir)
-    subject_id = basedir.rstrip(os.path.pathsep).split(os.path.pathsep)[-1]
+    subject_id = basedir.rstrip(os.path.sep).split(os.path.sep)[-1]
     filename = '%s_%s.provn' % (subject_id, project_id)
 
     # location of the ProvToolBox commandline conversion utility
