@@ -3,8 +3,10 @@
 """
 
 # standard library
+from datetime import datetime as dt
 import hashlib
 import os
+import pwd
 from socket import getfqdn
 import uuid
 
@@ -73,7 +75,7 @@ fs_file_map = [('T1', [nif["nlx_inv_20090243"]]),  # 3d T1 weighted scan
 ignore_list = ['bak', 'src', 'tmp', 'trash', 'touch']
 
 
-def create_entity(graph, fs_subject_id, filepath):
+def create_entity(graph, fs_subject_id, filepath, hostname):
     """ Create a PROV entity for a file in a FreeSurfer directory
     """
     # identify FreeSurfer terms based on directory and file names
@@ -87,7 +89,7 @@ def create_entity(graph, fs_subject_id, filepath):
     if file_md5_hash is None:
         print('Empty file: %s' % filepath)
 
-    url = "file://%s%s" % (getfqdn(), filepath)
+    url = "file://%s%s" % (hostname, filepath)
     url_get = prov.URIRef("http://computor.mit.edu:10101/file?file_uri=%s" % url)
     obj_attr = [(prov.PROV["label"], filename),
                 (fs["relative_path"], "%s" % relpath),
@@ -114,7 +116,8 @@ def create_entity(graph, fs_subject_id, filepath):
     return graph.entity(niiri[id], obj_attr)
 
 
-def encode_fs_directory(g, basedir, project_id, subject_id, n_items=100000):
+def encode_fs_directory(g, basedir, project_id, subject_id, hostname=None,
+                        n_items=100000):
     """ Convert a FreeSurfer directory to a PROV graph
     """
     # directory collection/catalog
@@ -124,9 +127,20 @@ def encode_fs_directory(g, basedir, project_id, subject_id, n_items=100000):
                                            nidm['tag']: project_id,
                                            fs['subject_id']: subject_id})
     directory_id = g.entity(niiri[uuid.uuid1().hex])
-    url = "file://%s%s" % (getfqdn(), os.path.abspath(basedir))
+    if hostname == None:
+        hostname = getfqdn()
+    url = "file://%s%s" % (hostname, os.path.abspath(basedir))
     directory_id.add_extra_attributes({prov.PROV['location']: prov.URIRef(url)})
     g.wasDerivedFrom(fsdir_collection, directory_id)
+
+    a0 = g.activity(niiri[uuid.uuid1().hex], startTime=dt.isoformat(dt.utcnow()))
+    user_agent = g.agent(niiri[uuid.uuid1().hex],
+                         {prov.PROV["type"]: prov.PROV["Person"],
+                          prov.PROV["label"]: pwd.getpwuid(os.geteuid()).pw_name,
+                          foaf["name"]: pwd.getpwuid(os.geteuid()).pw_name})
+    g.wasAssociatedWith(a0, user_agent, None, None,
+                        {prov.PROV["Role"]: "LoggedInUser"})
+    g.wasGeneratedBy(fsdir_collection, a0)
 
     i = 0
     for dirpath, dirnames, filenames in os.walk(os.path.realpath(basedir)):
@@ -148,18 +162,19 @@ def encode_fs_directory(g, basedir, project_id, subject_id, n_items=100000):
             if ignore_key_found:
                 continue
             try:
-                entity = create_entity(g, subject_id, file2encode)
+                entity = create_entity(g, subject_id, file2encode, hostname)
                 g.hadMember(fsdir_collection, entity.get_identifier())
             except IOError, e:
                 print e
     return g
 
 
-def to_graph(subject_specific_dir, project_id):
+def to_graph(subject_specific_dir, project_id, output_dir, hostname):
     # location of FreeSurfer $SUBJECTS_DIR
     basedir = os.path.abspath(subject_specific_dir)
     subject_id = basedir.rstrip(os.path.sep).split(os.path.sep)[-1]
-    filename = '%s_%s.provn' % (subject_id, project_id)
+    filename = os.path.join(output_dir, '%s_%s.provn' % (subject_id,
+                                                         project_id))
 
     # location of the ProvToolBox commandline conversion utility
     graph = prov.ProvBundle()
@@ -172,7 +187,8 @@ def to_graph(subject_specific_dir, project_id):
     graph.add_namespace(nif)
     graph.add_namespace(crypto)
 
-    graph = encode_fs_directory(graph, basedir, project_id, subject_id)
+    graph = encode_fs_directory(graph, basedir, project_id, subject_id,
+                                hostname=hostname)
     with open(filename, 'wt') as fp:
         fp.writelines(graph.get_provn())
     #graph.rdf().serialize(filename_ttl, format='turtle')
@@ -220,8 +236,15 @@ if __name__ == "__main__":
                         help='SPARQL endpoint to use for update')
     parser.add_argument('-g', '--graph_iri', type=str,
                         help='Graph IRI to store the triples')
+    parser.add_argument('-o', '--output_dir', type=str,
+                        help='Output directory')
+    parser.add_argument('-n', '--hostname', type=str,
+                        help='Hostname for file url')
 
     args = parser.parse_args()
+    if args.output_dir is None:
+        args.output_dir = os.getcwd()
 
-    graph = to_graph(args.subject_dir, args.project_id)
+    graph = to_graph(args.subject_dir, args.project_id, args.output_dir,
+                     args.hostname)
     upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri)
