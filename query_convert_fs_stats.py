@@ -1,0 +1,231 @@
+#!/usr/bin/env python
+"""Query for FreeSurfer stat files, encode using NI-DM and upload
+"""
+
+#standard library
+from datetime import datetime as dt
+import hashlib
+import os
+from tempfile import mktemp
+import pwd
+import urlparse
+import urllib
+from uuid import uuid1
+
+# PROV API library
+import prov.model as prov
+import rdflib
+import requests
+
+
+def get_urls(endpoint, limit=1000):
+    query = """
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    PREFIX fs: <http://freesurfer.net/fswiki/terms/>
+    PREFIX crypto: <http://www.w3.org/2000/10/swap/crypto#>
+    PREFIX nidm: <http://nidm.nidash.org/terms/>
+    select ?e ?relpath ?md5 ?path where
+    {?c a prov:Collection;
+        prov:hadMember ?e .
+     ?e fs:FileType fs:statistic_file;
+        fs:relative_path ?relpath;
+        crypto:md5 ?md5;
+        prov:location ?path .
+     FILTER NOT EXISTS {
+      ?e nidm:tag "curv" .
+     }
+     FILTER NOT EXISTS {
+      ?out prov:wasDerivedFrom ?e;
+           a prov:Collection .
+     }
+    }
+    LIMIT %d
+    """ % limit
+    g = rdflib.ConjunctiveGraph('SPARQLStore')
+    g.open(endpoint)
+    results = g.query(query)
+    return results
+
+def read_stats(filename):
+    """Convert stats file to a structure
+    """
+    header = {}
+    tableinfo = {}
+    measures = []
+    rowmeasures = []
+    with open(filename, 'rt') as fp:
+        lines = fp.readlines()
+        for line in lines:
+            #parse commented header
+            if line.startswith('#'):
+                fields = line.split()[1:]
+                if len(fields) < 2:
+                    continue
+                tag = fields[0]
+                if tag == 'TableCol':
+                    col_idx = int(fields[1])
+                    if col_idx not in tableinfo:
+                        tableinfo[col_idx] = {}
+                    tableinfo[col_idx][fields[2]] = ' '.join(fields[3:])
+                    if tableinfo[col_idx][fields[2]] == "StructName":
+                        struct_idx = col_idx
+                elif tag == "Measure":
+                    fields = ' '.join(fields[1:]).split(', ')
+                    measures.append({'structure': fields[0],
+                                     'name': fields[1],
+                                     'description': fields[2],
+                                     'value': fields[3],
+                                     'units': fields[4],
+                                     'source': 'Header'})
+                elif tag == "ColHeaders":
+                    continue
+                else:
+                    header[tag] = ' '.join(fields[1:])
+            else:
+                #read values
+                row = line.split()
+                values = {}
+                measures.append({'structure': row[struct_idx-1],
+                                 'items': [],
+                                 'source': 'Table'}),
+                for idx, value in enumerate(row):
+                    if idx + 1 == struct_idx:
+                        continue
+                    measures[-1]['items'].append({
+                        'name': tableinfo[idx + 1]['ColHeader'],
+                        'description': tableinfo[idx + 1]['FieldName'],
+                        'value': value,
+                        'units': tableinfo[idx + 1]['Units'],
+                        })
+    return header, tableinfo, measures
+
+def parse_stats(fs_stat_file, entity_uri):
+    """Convert stats file to a nidm object
+    """
+    foaf = prov.Namespace("foaf", "http://xmlns.com/foaf/0.1/")
+    dcterms = prov.Namespace("dcterms", "http://purl.org/dc/terms/")
+    fs = prov.Namespace("fs", "http://freesurfer.net/fswiki/terms/")
+    nidm = prov.Namespace("nidm", "http://nidm.nidash.org/terms/")
+    niiri = prov.Namespace("niiri", "http://nidm.nidash.org/iri/")
+    obo = prov.Namespace("obo", "http://purl.obolibrary.org/obo/")
+    nif = prov.Namespace("nif", "http://neurolex.org/wiki/")
+    crypto = prov.Namespace("crypto", "http://www.w3.org/2000/10/swap/crypto#")
+
+    header, tableinfo, measures = read_stats(fs_stat_file)
+    print tableinfo
+    print header
+    g = prov.ProvBundle()
+    
+    # Set the default _namespace name
+    #g.set_default_namespace(fs.get_uri())
+    g.add_namespace(foaf)
+    g.add_namespace(dcterms)
+    g.add_namespace(fs)
+    g.add_namespace(nidm)
+    g.add_namespace(niiri)
+
+    get_id = lambda : niiri[uuid1().hex]
+    a0 = g.activity(get_id(), startTime=dt.isoformat(dt.utcnow()))
+    user_agent = g.agent(get_id(),
+                         {prov.PROV["type"]: prov.PROV["Person"],
+                          prov.PROV["label"]: pwd.getpwuid(os.geteuid()).pw_name,
+                          foaf["name"]: pwd.getpwuid(os.geteuid()).pw_name})
+    g.wasAssociatedWith(a0, user_agent, None, None,
+                        {prov.PROV["Role"]: "LoggedInUser"})
+
+    stat_collection = g.collection(get_id())
+    # header elements
+    statheader_collection = g.entity(get_id())
+    attributes = {prov.PROV['type']: fs['stat_header']}
+    for key, value in header.items():
+        attributes[fs[key]] = value
+    statheader_collection.add_extra_attributes(attributes)
+    # measures
+    id = get_id()
+    measure_collection = g.collection(id)
+    measure_collection.add_extra_attributes({prov.PROV['type']: fs['stat_measures']})
+    struct_info = {}
+    for measure in measures:
+        obj_attr = []
+        struct_uri = fs[measure['structure']]
+        if measure['source'] == 'Header':
+            obj_attr.append((nidm["AnatomicalAnnotation"], struct_uri))
+            valref= measure['value']
+            obj_attr.append((fs[measure['name']], valref))
+        elif measure['source'] == 'Table':
+            obj_attr.append((nidm["AnatomicalAnnotation"], struct_uri))
+            for column_info in measure['items']:
+                obj_attr.append((fs[column_info['name']], column_info['value']))
+        id = get_id()
+        if struct_uri in struct_info:
+            euri = struct_info[struct_uri]
+            euri.add_extra_attributes(obj_attr)
+        else:
+            euri = g.entity(id, obj_attr)
+            struct_info[struct_uri] = euri
+        g.hadMember(measure_collection, id)
+    g.hadMember(stat_collection, statheader_collection)
+    g.hadMember(stat_collection, measure_collection)
+    g.derivation(stat_collection, entity_uri)
+    g.wasGeneratedBy(stat_collection, a0)
+    return g
+
+def job(row):
+    entity, relpath, md5sum, urlget = row[0], row[1], row[2], row[3]
+    r = requests.get(urlget).json()
+    if str(md5sum) == str(r['md5sum']):
+        filename = mktemp()
+        urllib.urlretrieve(r['uri'], filename)
+        stats_graph = parse_stats(filename, entity)
+        os.unlink(filename)
+        return stats_graph
+    return None
+
+def upload_graph(graph, endpoint=None, uri='http://test.nidm.org'):
+    import requests
+    from requests.auth import HTTPDigestAuth
+
+    # connection params for secure endpoint
+    if endpoint is None:
+        endpoint = 'http://bips.incf.org:8890/sparql'
+
+    # session defaults
+    session = requests.Session()
+    session.headers = {'Accept': 'text/html'}  # HTML from SELECT queries
+
+    counter = 0
+    max_stmts = 1000
+    stmts = graph.rdf().serialize(format='nt').splitlines()
+    N = len(stmts)
+    while (counter < N):
+        endcounter = min(N, counter + max_stmts)
+        query = """
+        INSERT IN GRAPH <%s>
+        {
+        %s
+        }
+        """ % (uri, '\n'.join(stmts[counter:endcounter]))
+        data = {'query': query}
+        result = session.post(endpoint, data=data)
+        print(result)
+        counter = endcounter
+    print('Submitted %d statemnts' % N)
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(prog='fs_upload_to_triplesore.py',
+                                     description=__doc__)
+    parser.add_argument('-e', '--endpoint', type=str,
+                        help='SPARQL endpoint to use for update')
+    parser.add_argument('-g', '--graph_iri', type=str,
+                        help='Graph IRI to store the triples')
+    parser.add_argument('-o', '--output_dir', type=str,
+                        help='Output directory')
+
+    args = parser.parse_args()
+    if args.output_dir is None:
+        args.output_dir = os.getcwd()
+
+    #graph = to_graph(args.subject_dir, args.project_id, args.output_dir,
+    #                 args.hostname)
+    #upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri)
