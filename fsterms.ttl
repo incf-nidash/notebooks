@@ -1,0 +1,51 @@
+@prefix fs: <http://freesurfer.net/fswiki/terms/> .
+@prefix nidm: <http://nidm.nidash.org/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fs:CurvInd a fs:Measure ;
+    rdfs:label "Intrinsic Curvature Index" ;
+    nidm:units "unitless" .
+
+fs:FoldInd a fs:Measure ;
+    rdfs:label "Folding Index" ;
+    nidm:units "unitless" .
+
+fs:GausCurv a fs:Measure ;
+    rdfs:label "Integrated Rectified Gaussian Curvature" ;
+    nidm:units "mm^-2" .
+
+fs:GrayVol a fs:Measure ;
+    rdfs:label "Gray Matter Volume" ;
+    nidm:units "mm^3" .
+
+fs:MeanCurv a fs:Measure ;
+    rdfs:label "Integrated Rectified Mean Curvature" ;
+    nidm:units "mm^-1" .
+
+fs:MeanThickness a fs:Measure ;
+    rdfs:label "Mean Thickness" ;
+    nidm:units "mm" .
+
+fs:NumVert a fs:Measure ;
+    rdfs:label "Number of Vertices" ;
+    nidm:units "unitless" .
+
+fs:SurfArea a fs:Measure ;
+    rdfs:label "Surface Area" ;
+    nidm:units "mm^2" .
+
+fs:ThickAvg a fs:Measure ;
+    rdfs:label "Average Thickness" ;
+    nidm:units "mm" .
+
+fs:ThickStd a fs:Measure ;
+    rdfs:label "Thickness StdDev" ;
+    nidm:units "mm" .
+
+fs:WhiteSurfArea a fs:Measure ;
+    rdfs:label "White Surface Total Area" ;
+    nidm:units "mm^2" .
+

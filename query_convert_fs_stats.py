@@ -13,6 +13,7 @@ import urllib
 from uuid import uuid1
 
 # PROV API library
+import pandas as pd
 import prov.model as prov
 import rdflib
 import requests
@@ -56,6 +57,8 @@ def read_stats(filename):
     with open(filename, 'rt') as fp:
         lines = fp.readlines()
         for line in lines:
+            if line == line[0]:
+                continue
             #parse commented header
             if line.startswith('#'):
                 fields = line.split()[1:]
@@ -112,8 +115,6 @@ def parse_stats(fs_stat_file, entity_uri):
     crypto = prov.Namespace("crypto", "http://www.w3.org/2000/10/swap/crypto#")
 
     header, tableinfo, measures = read_stats(fs_stat_file)
-    print tableinfo
-    print header
     g = prov.ProvBundle()
     
     # Set the default _namespace name
@@ -132,8 +133,8 @@ def parse_stats(fs_stat_file, entity_uri):
                           foaf["name"]: pwd.getpwuid(os.geteuid()).pw_name})
     g.wasAssociatedWith(a0, user_agent, None, None,
                         {prov.PROV["Role"]: "LoggedInUser"})
-
     stat_collection = g.collection(get_id())
+    stat_collection.add_extra_attributes({prov.PROV['type']: nidm['FreeSurferStatsCollection']})
     # header elements
     statheader_collection = g.entity(get_id())
     attributes = {prov.PROV['type']: fs['stat_header']}
@@ -141,21 +142,57 @@ def parse_stats(fs_stat_file, entity_uri):
         attributes[fs[key]] = value
     statheader_collection.add_extra_attributes(attributes)
     # measures
-    id = get_id()
-    measure_collection = g.collection(id)
-    measure_collection.add_extra_attributes({prov.PROV['type']: fs['stat_measures']})
     struct_info = {}
+    measure_list = []
+    measure_graph = rdflib.ConjunctiveGraph()
+    measure_graph.namespace_manager.bind('fs', fs.get_uri())
+    measure_graph.namespace_manager.bind('nidm', nidm.get_uri())
     for measure in measures:
         obj_attr = []
         struct_uri = fs[measure['structure']]
         if measure['source'] == 'Header':
+            measure_name = measure['name']
+            if measure_name not in measure_list:
+                measure_list.append(measure_name)
+                measure_uri = fs[measure_name].rdf_representation()
+                measure_graph.add((measure_uri,
+                                   rdflib.RDF['type'],
+                                   fs['Measure'].rdf_representation()))
+                measure_graph.add((measure_uri,
+                                   rdflib.RDFS['label'],
+                                   rdflib.Literal(measure['description'])))
+                measure_graph.add((measure_uri,
+                                   nidm['units'].rdf_representation(),
+                                   rdflib.Literal(measure['units'])))
             obj_attr.append((nidm["AnatomicalAnnotation"], struct_uri))
-            valref= measure['value']
-            obj_attr.append((fs[measure['name']], valref))
+            if 'unitless' in measure['units']:
+                valref = prov.Literal(int(measure['value']), prov.XSD['integer'])
+            else:
+                valref= prov.Literal(float(measure['value']), prov.XSD['float'])
+            obj_attr.append((fs[measure_name], valref))
         elif measure['source'] == 'Table':
             obj_attr.append((nidm["AnatomicalAnnotation"], struct_uri))
             for column_info in measure['items']:
-                obj_attr.append((fs[column_info['name']], column_info['value']))
+                measure_name = column_info['name']
+                if 'unitless' in column_info['units'] and '.' not in column_info['value']:
+                    valref = prov.Literal(int(column_info['value']),
+                                          prov.XSD['integer'])
+                else:
+                    valref= prov.Literal(float(column_info['value']),
+                                         prov.XSD['float'])
+                obj_attr.append((fs[measure_name], valref))
+                if measure_name not in measure_list:
+                    measure_list.append(measure_name)
+                    measure_uri = fs[measure_name].rdf_representation()
+                    measure_graph.add((measure_uri,
+                                       rdflib.RDF['type'],
+                                       fs['Measure'].rdf_representation()))
+                    measure_graph.add((measure_uri,
+                                       rdflib.RDFS['label'],
+                                       rdflib.Literal(column_info['description'])))
+                    measure_graph.add((measure_uri,
+                                       nidm['units'].rdf_representation(),
+                                       rdflib.Literal(column_info['units'])))
         id = get_id()
         if struct_uri in struct_info:
             euri = struct_info[struct_uri]
@@ -163,12 +200,11 @@ def parse_stats(fs_stat_file, entity_uri):
         else:
             euri = g.entity(id, obj_attr)
             struct_info[struct_uri] = euri
-        g.hadMember(measure_collection, id)
+        g.hadMember(stat_collection, id)
     g.hadMember(stat_collection, statheader_collection)
-    g.hadMember(stat_collection, measure_collection)
     g.derivation(stat_collection, entity_uri)
     g.wasGeneratedBy(stat_collection, a0)
-    return g
+    return g, measure_graph
 
 def job(row):
     entity, relpath, md5sum, urlget = row[0], row[1], row[2], row[3]
@@ -176,9 +212,9 @@ def job(row):
     if str(md5sum) == str(r['md5sum']):
         filename = mktemp()
         urllib.urlretrieve(r['uri'], filename)
-        stats_graph = parse_stats(filename, entity)
+        stats_graph, measure_graph = parse_stats(filename, entity)
         os.unlink(filename)
-        return stats_graph
+        return stats_graph, measure_graph
     return None
 
 def upload_graph(graph, endpoint=None, uri='http://test.nidm.org'):
