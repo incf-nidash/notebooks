@@ -18,15 +18,33 @@ import prov.model as prov
 import rdflib
 import requests
 
+def get_collections(endpoint, limit=1000):
+    """Get all freesurfer subject directory collections from remote endpoint
+    """
+    query = """
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    PREFIX fs: <http://freesurfer.net/fswiki/terms/>
+    PREFIX crypto: <http://www.w3.org/2000/10/swap/crypto#>
+    PREFIX nidm: <http://nidm.nidash.org/terms/>
+    select ?collection where
+    {?collection a prov:Collection;
+                 a fs:subject_directory .
+    }
+    LIMIT %d
+    """ % limit
+    g = rdflib.Graph('SPARQLStore')
+    g.open(endpoint)
+    results = g.query(query)
+    return results
 
-def get_urls(endpoint, limit=1000):
+def get_urls(endpoint, collection, limit=1000):
     query = """
     PREFIX prov: <http://www.w3.org/ns/prov#>
     PREFIX fs: <http://freesurfer.net/fswiki/terms/>
     PREFIX crypto: <http://www.w3.org/2000/10/swap/crypto#>
     PREFIX nidm: <http://nidm.nidash.org/terms/>
     select ?e ?relpath ?md5 ?path where
-    {?c a prov:Collection;
+    {<%s> a prov:Collection;
         prov:hadMember ?e .
      ?e fs:FileType fs:statistic_file;
         fs:relative_path ?relpath;
@@ -41,8 +59,8 @@ def get_urls(endpoint, limit=1000):
      }
     }
     LIMIT %d
-    """ % limit
-    g = rdflib.ConjunctiveGraph('SPARQLStore')
+    """ % (collection, limit)
+    g = rdflib.Graph('SPARQLStore')
     g.open(endpoint)
     results = g.query(query)
     return results
@@ -147,6 +165,7 @@ def parse_stats(fs_stat_file, entity_uri):
     measure_graph = rdflib.ConjunctiveGraph()
     measure_graph.namespace_manager.bind('fs', fs.get_uri())
     measure_graph.namespace_manager.bind('nidm', nidm.get_uri())
+    unknown_units = set(('unitless', 'NA'))
     for measure in measures:
         obj_attr = []
         struct_uri = fs[measure['structure']]
@@ -165,7 +184,7 @@ def parse_stats(fs_stat_file, entity_uri):
                                    nidm['units'].rdf_representation(),
                                    rdflib.Literal(measure['units'])))
             obj_attr.append((nidm["AnatomicalAnnotation"], struct_uri))
-            if 'unitless' in measure['units']:
+            if str(measure['units']) in unknown_units:
                 valref = prov.Literal(int(measure['value']), prov.XSD['integer'])
             else:
                 valref= prov.Literal(float(measure['value']), prov.XSD['float'])
@@ -174,7 +193,8 @@ def parse_stats(fs_stat_file, entity_uri):
             obj_attr.append((nidm["AnatomicalAnnotation"], struct_uri))
             for column_info in measure['items']:
                 measure_name = column_info['name']
-                if 'unitless' in column_info['units'] and '.' not in column_info['value']:
+                if column_info['units'] in unknown_units and \
+                   '.' not in column_info['value']:
                     valref = prov.Literal(int(column_info['value']),
                                           prov.XSD['integer'])
                 else:
@@ -247,9 +267,17 @@ def upload_graph(graph, endpoint=None, uri='http://test.nidm.org'):
         counter = endcounter
     print('Submitted %d statemnts' % N)
 
+def process_collection(endpoint, collection, graph_iri):
+    results = get_urls(endpoint, collection)
+    for row in results:
+        g, _ = job(row)
+        #mg.parse('fsterms.ttl', format='turtle')
+        #mg.serialize('fsterms.ttl', format='turtle')
+        upload_graph(g, endpoint=endpoint, uri=graph_iri)
+
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(prog='fs_upload_to_triplesore.py',
+    parser = argparse.ArgumentParser(prog='query_convert_fs_stats.py',
                                      description=__doc__)
     parser.add_argument('-e', '--endpoint', type=str,
                         help='SPARQL endpoint to use for update')
@@ -257,11 +285,14 @@ if __name__ == "__main__":
                         help='Graph IRI to store the triples')
     parser.add_argument('-o', '--output_dir', type=str,
                         help='Output directory')
+    parser.add_argument('-c', '--collection', type=str,
+                        help='Identifier for collection')
 
     args = parser.parse_args()
     if args.output_dir is None:
         args.output_dir = os.getcwd()
 
+    #process_collection(args.endpoint, args.collection, args.graph_iri)
     #graph = to_graph(args.subject_dir, args.project_id, args.output_dir,
     #                 args.hostname)
     #upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri)

@@ -5,47 +5,117 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-fs:CurvInd a fs:Measure ;
-    rdfs:label "Intrinsic Curvature Index" ;
+fs:BrainMaskNVox a fs:Measure ;
+    rdfs:label "Number of Brain Mask Voxels" ;
     nidm:units "unitless" .
 
-fs:FoldInd a fs:Measure ;
-    rdfs:label "Folding Index" ;
-    nidm:units "unitless" .
-
-fs:GausCurv a fs:Measure ;
-    rdfs:label "Integrated Rectified Gaussian Curvature" ;
-    nidm:units "mm^-2" .
-
-fs:GrayVol a fs:Measure ;
-    rdfs:label "Gray Matter Volume" ;
+fs:BrainMaskVol a fs:Measure ;
+    rdfs:label "Brain Mask Volume" ;
     nidm:units "mm^3" .
 
-fs:MeanCurv a fs:Measure ;
-    rdfs:label "Integrated Rectified Mean Curvature" ;
-    nidm:units "mm^-1" .
-
-fs:MeanThickness a fs:Measure ;
-    rdfs:label "Mean Thickness" ;
-    nidm:units "mm" .
-
-fs:NumVert a fs:Measure ;
-    rdfs:label "Number of Vertices" ;
+fs:BrainSegNVox a fs:Measure ;
+    rdfs:label "Number of Brain Segmentation Voxels" ;
     nidm:units "unitless" .
 
-fs:SurfArea a fs:Measure ;
-    rdfs:label "Surface Area" ;
-    nidm:units "mm^2" .
+fs:BrainSegVol a fs:Measure ;
+    rdfs:label "Brain Segmentation Volume" ;
+    nidm:units "mm^3" .
 
-fs:ThickAvg a fs:Measure ;
-    rdfs:label "Average Thickness" ;
-    nidm:units "mm" .
+fs:BrainSegVolNotVent a fs:Measure ;
+    rdfs:label "Brain Segmentation Volume Without Ventricles" ;
+    nidm:units "mm^3" .
 
-fs:ThickStd a fs:Measure ;
-    rdfs:label "Thickness StdDev" ;
-    nidm:units "mm" .
+fs:CorticalWhiteMatterVol a fs:Measure ;
+    rdfs:label "Total cortical white matter volume" ;
+    nidm:units "mm^3" .
+
+fs:ICV a fs:Measure ;
+    rdfs:label "Intracranial Volume" ;
+    nidm:units "mm^3" .
+
+fs:Index a fs:Measure ;
+    rdfs:label "Index" ;
+    nidm:units "NA" .
+
+fs:NVoxels a fs:Measure ;
+    rdfs:label "Number of Voxels" ;
+    nidm:units "unitless" .
+
+fs:SegId a fs:Measure ;
+    rdfs:label "Segmentation Id" ;
+    nidm:units "NA" .
+
+fs:Volume_mm3 a fs:Measure ;
+    rdfs:label "Volume" ;
+    nidm:units "mm^3" .
+
+fs:lhCorticalWhiteMatterVol a fs:Measure ;
+    rdfs:label "Left hemisphere cortical white matter volume" ;
+    nidm:units "mm^3" .
+
+fs:normMax a fs:Measure ;
+    rdfs:label "Intensity normMax" ;
+    nidm:units "MR" .
+
+fs:normMean a fs:Measure ;
+    rdfs:label "Intensity normMean" ;
+    nidm:units "MR" .
+
+fs:normMin a fs:Measure ;
+    rdfs:label "Intensity normMin" ;
+    nidm:units "MR" .
+
+fs:normRange a fs:Measure ;
+    rdfs:label "Intensity normRange" ;
+    nidm:units "MR" .
+
+fs:normStdDev a fs:Measure ;
+    rdfs:label "Itensity normStdDev" ;
+    nidm:units "MR" .
+
+fs:rhCorticalWhiteMatterVol a fs:Measure ;
+    rdfs:label "Right hemisphere cortical white matter volume" ;
+    nidm:units "mm^3" .
+
+nits "mm^3" .
 
 fs:WhiteSurfArea a fs:Measure ;
     rdfs:label "White Surface Total Area" ;
     nidm:units "mm^2" .
+
+fs:lhCortexVol a fs:Measure ;
+    rdfs:label "Left hemisphere cortical gray matter volume" ;
+    nidm:units "mm^3" .
+
+fs:lhCorticalWhiteMatterVol a fs:Measure ;
+    rdfs:label "Left hemisphere cortical white matter volume" ;
+    nidm:units "mm^3" .
+
+fs:normMax a fs:Measure ;
+    rdfs:label "Intensity normMax" ;
+    nidm:units "MR" .
+
+fs:normMean a fs:Measure ;
+    rdfs:label "Intensity normMean" ;
+    nidm:units "MR" .
+
+fs:normMin a fs:Measure ;
+    rdfs:label "Intensity normMin" ;
+    nidm:units "MR" .
+
+fs:normRange a fs:Measure ;
+    rdfs:label "Intensity normRange" ;
+    nidm:units "MR" .
+
+fs:normStdDev a fs:Measure ;
+    rdfs:label "Itensity normStdDev" ;
+    nidm:units "MR" .
+
+fs:rhCortexVol a fs:Measure ;
+    rdfs:label "Right hemisphere cortical gray matter volume" ;
+    nidm:units "mm^3" .
+
+fs:rhCorticalWhiteMatterVol a fs:Measure ;
+    rdfs:label "Right hemisphere cortical white matter volume" ;
+    nidm:units "mm^3" .
 
