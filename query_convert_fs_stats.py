@@ -37,7 +37,7 @@ def get_collections(endpoint, limit=1000):
     results = g.query(query)
     return results
 
-def get_urls(endpoint, collection, limit=1000):
+def get_urls(endpoint, collection, limit=1000, ignore_filter=False):
     query = """
     PREFIX prov: <http://www.w3.org/ns/prov#>
     PREFIX fs: <http://freesurfer.net/fswiki/terms/>
@@ -53,14 +53,19 @@ def get_urls(endpoint, collection, limit=1000):
      FILTER NOT EXISTS {
       ?e nidm:tag "curv" .
      }
+     """ % collection
+    if not ignore_filter:
+        query += """
      FILTER NOT EXISTS {
       ?out prov:wasDerivedFrom ?e;
            a prov:Collection .
      }
+    """
+    query += """
     }
     LIMIT %d
-    """ % (collection, limit)
-    g = rdflib.Graph('SPARQLStore')
+    """ % limit
+    g = rdflib.ConjunctiveGraph('SPARQLStore')
     g.open(endpoint)
     results = g.query(query)
     return results
@@ -267,12 +272,13 @@ def upload_graph(graph, endpoint=None, uri='http://test.nidm.org'):
         counter = endcounter
     print('Submitted %d statemnts' % N)
 
-def process_collection(endpoint, collection, graph_iri):
-    results = get_urls(endpoint, collection)
+def process_collection(endpoint, collection, graph_iri, ignore_filter=False):
+    results = get_urls(endpoint, collection, ignore_filter=ignore_filter)
     for row in results:
-        g, _ = job(row)
-        #mg.parse('fsterms.ttl', format='turtle')
-        #mg.serialize('fsterms.ttl', format='turtle')
+        g, mg = job(row)
+        if os.path.exists('fsterms.ttl'):
+            mg.parse('fsterms.ttl', format='turtle')
+        mg.serialize('fsterms.ttl', format='turtle')
         upload_graph(g, endpoint=endpoint, uri=graph_iri)
 
 if __name__ == "__main__":
