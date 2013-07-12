@@ -32,8 +32,8 @@ def hash_infile(afile, crypto=hashlib.md5, chunk_len=8192):
 # create namespace references to terms used
 foaf = prov.Namespace("foaf", "http://xmlns.com/foaf/0.1/")
 dcterms = prov.Namespace("dcterms", "http://purl.org/dc/terms/")
-fs = prov.Namespace("fs", "http://freesurfer.net/fswiki/terms/0.1/")
-nidm = prov.Namespace("nidm", "http://nidm.nidash.org/terms/0.1/")
+fs = prov.Namespace("fs", "http://freesurfer.net/fswiki/terms/")
+nidm = prov.Namespace("nidm", "http://nidm.nidash.org/terms/")
 niiri = prov.Namespace("niiri", "http://nidm.nidash.org/iri/")
 obo = prov.Namespace("obo", "http://purl.obolibrary.org/obo/")
 nif = prov.Namespace("nif", "http://neurolex.org/wiki/")

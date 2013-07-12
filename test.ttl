@@ -1,0 +1,1024 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix fs: <http://freesurfer.net/fswiki/terms/> .
+@prefix nidm: <http://nidm.nidash.org/terms/> .
+@prefix niiri: <http://nidm.nidash.org/iri/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <http://www.w3.org/2001/XMLSchema-datatypes#> .
+
+<http://nidm.nidash.org/iri/3ab88914d3d011e2a755001e4fb1404c> a nidm:FreeSurferStatsCollection,
+        prov:Collection,
+        prov:Entity ;
+    prov:hadMember <http://nidm.nidash.org/iri/3ab90a4cd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abaa3fcd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abac904d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abad6a6d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb1620d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb1f94d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb28e0d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb31bed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb3a7ed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb430cd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb4bead3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb5496d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb5d42d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb65dad3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb6e90d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb7764d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb8010d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb8c90d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb95b4d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abb9eecd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abba78ed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbb058d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbb8f0d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbc19cd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbca66d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbd330d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbdbfad3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbe4bad3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbed66d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbf64ed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abbfefad3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abc079cd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abc1048d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abc9572d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abc9ea0d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abca71ad3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcaf80d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcb822d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcc09cd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcc920d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcd2d0d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcdb22d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abce360d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcebeed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcf440d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abcfca6d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd0502d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd0d86d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd1632d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd1e66d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd2b68d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd33e2d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd3c66d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd4512d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd4d82d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd55f2d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd5e4ed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd66b4d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd6fd8d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd785cd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd80a4d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd8914d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd9166d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abd99c2d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abda21ed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdaa8ed3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdb7d6d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdc000d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdc870d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdd0ccd3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdd978d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abde238d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdeab2d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdf318d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abdfbced3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abe0452d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abe0d62d3d011e2a755001e4fb1404c>,
+        <http://nidm.nidash.org/iri/3abe15aad3d011e2a755001e4fb1404c> ;
+    prov:wasDerivedFrom <http://nidm.nidash.org/iri/33515d18d31211e28994bc305b255c25> ;
+    prov:wasGeneratedBy <http://nidm.nidash.org/iri/3ab7a81ed3d011e2a755001e4fb1404c> .
+
+<Ncbf36d7022e14f55bceb8e184c901e92> a prov:Association ;
+    prov:Role "LoggedInUser" ;
+    prov:agent <http://nidm.nidash.org/iri/3ab819c0d3d011e2a755001e4fb1404c> .
+
+<http://nidm.nidash.org/iri/3ab7a81ed3d011e2a755001e4fb1404c> a prov:Activity ;
+    prov:qualifiedAssociation <Ncbf36d7022e14f55bceb8e184c901e92> ;
+    prov:startTime "2013-06-13T02:23:26.631079"^^xsd:dateTime ;
+    prov:wasAssociatedWith <http://nidm.nidash.org/iri/3ab819c0d3d011e2a755001e4fb1404c> .
+
+<http://nidm.nidash.org/iri/3ab90a4cd3d011e2a755001e4fb1404c> a fs:stat_header,
+        prov:Entity ;
+    fs:AnnotationFile "../label/rh.aparc.a2009s.annot" ;
+    fs:AnnotationFileTimeStamp "2011/08/31 12:54:26" ;
+    fs:CreationTime "2011/08/31-16:54:32-GMT" ;
+    fs:NTableCols "10" ;
+    fs:SUBJECTS_DIR "/autofs/cluster/scratch/wednesday/satra/surfaces" ;
+    fs:Table "of FreeSurfer cortical parcellation anatomical statistics" ;
+    fs:anatomy_type "surface" ;
+    fs:cmdline "mris_anatomical_stats -mgz -cortex ../label/rh.cortex.label -f ../stats/rh.aparc.a2009s.stats -b -a ../label/rh.aparc.a2009s.annot -c ../label/aparc.annot.a2009s.ctab 0015006 rh white" ;
+    fs:cvs_version "$Id: mris_anatomical_stats.c,v 1.72 2011/03/02 00:04:26 nicks Exp $" ;
+    fs:generating_program "mris_anatomical_stats" ;
+    fs:hemi "rh" ;
+    fs:hostname "compute-0-29.local" ;
+    fs:machine "x86_64" ;
+    fs:mrisurf.c-cvs_version "$Id: mrisurf.c,v 1.693.2.2 2011/04/27 19:21:05 nicks Exp $" ;
+    fs:subjectname "0015006" ;
+    fs:sysname "Linux" ;
+    fs:user "satra" .
+
+<http://nidm.nidash.org/iri/3abaa3fcd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:MeanThickness "2.63243"^^xsd1:float ;
+    fs:NumVert "132327"^^xsd1:integer ;
+    fs:WhiteSurfArea "83873.9"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:Cortex .
+
+<http://nidm.nidash.org/iri/3abb1620d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "7.0"^^xsd1:float ;
+    fs:FoldInd "40"^^xsd1:integer ;
+    fs:GausCurv "0.13"^^xsd1:float ;
+    fs:GrayVol "2033.0"^^xsd1:float ;
+    fs:MeanCurv "0.183"^^xsd1:float ;
+    fs:NumVert "1064"^^xsd1:integer ;
+    fs:SurfArea "677.0"^^xsd1:float ;
+    fs:ThickAvg "2.415"^^xsd1:float ;
+    fs:ThickStd "0.686"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_frontomargin .
+
+<http://nidm.nidash.org/iri/3abb1f94d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.8"^^xsd1:float ;
+    fs:FoldInd "26"^^xsd1:integer ;
+    fs:GausCurv "0.08"^^xsd1:float ;
+    fs:GrayVol "2228.0"^^xsd1:float ;
+    fs:MeanCurv "0.147"^^xsd1:float ;
+    fs:NumVert "1293"^^xsd1:integer ;
+    fs:SurfArea "751.0"^^xsd1:float ;
+    fs:ThickAvg "2.716"^^xsd1:float ;
+    fs:ThickStd "0.584"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_occipital_inf .
+
+<http://nidm.nidash.org/iri/3abb28e0d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "6.2"^^xsd1:float ;
+    fs:FoldInd "63"^^xsd1:integer ;
+    fs:GausCurv "0.097"^^xsd1:float ;
+    fs:GrayVol "2078.0"^^xsd1:float ;
+    fs:MeanCurv "0.152"^^xsd1:float ;
+    fs:NumVert "1438"^^xsd1:integer ;
+    fs:SurfArea "715.0"^^xsd1:float ;
+    fs:ThickAvg "2.436"^^xsd1:float ;
+    fs:ThickStd "0.519"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_paracentral .
+
+<http://nidm.nidash.org/iri/3abb31bed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.3"^^xsd1:float ;
+    fs:FoldInd "27"^^xsd1:integer ;
+    fs:GausCurv "0.057"^^xsd1:float ;
+    fs:GrayVol "3372.0"^^xsd1:float ;
+    fs:MeanCurv "0.15"^^xsd1:float ;
+    fs:NumVert "1766"^^xsd1:integer ;
+    fs:SurfArea "1142.0"^^xsd1:float ;
+    fs:ThickAvg "2.54"^^xsd1:float ;
+    fs:ThickStd "0.51"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_subcentral .
+
+<http://nidm.nidash.org/iri/3abb3a7ed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "5.8"^^xsd1:float ;
+    fs:FoldInd "50"^^xsd1:integer ;
+    fs:GausCurv "0.143"^^xsd1:float ;
+    fs:GrayVol "2474.0"^^xsd1:float ;
+    fs:MeanCurv "0.219"^^xsd1:float ;
+    fs:NumVert "1041"^^xsd1:integer ;
+    fs:SurfArea "682.0"^^xsd1:float ;
+    fs:ThickAvg "2.708"^^xsd1:float ;
+    fs:ThickStd "0.586"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_transv_frontopol .
+
+<http://nidm.nidash.org/iri/3abb430cd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "6.7"^^xsd1:float ;
+    fs:FoldInd "45"^^xsd1:integer ;
+    fs:GausCurv "0.062"^^xsd1:float ;
+    fs:GrayVol "5123.0"^^xsd1:float ;
+    fs:MeanCurv "0.144"^^xsd1:float ;
+    fs:NumVert "2701"^^xsd1:integer ;
+    fs:SurfArea "1837.0"^^xsd1:float ;
+    fs:ThickAvg "2.521"^^xsd1:float ;
+    fs:ThickStd "0.632"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_cingul-Ant .
+
+<http://nidm.nidash.org/iri/3abb4bead3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.5"^^xsd1:float ;
+    fs:FoldInd "21"^^xsd1:integer ;
+    fs:GausCurv "0.054"^^xsd1:float ;
+    fs:GrayVol "3062.0"^^xsd1:float ;
+    fs:MeanCurv "0.144"^^xsd1:float ;
+    fs:NumVert "1525"^^xsd1:integer ;
+    fs:SurfArea "1023.0"^^xsd1:float ;
+    fs:ThickAvg "2.741"^^xsd1:float ;
+    fs:ThickStd "0.566"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_cingul-Mid-Ant .
+
+<http://nidm.nidash.org/iri/3abb5496d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "5.8"^^xsd1:float ;
+    fs:FoldInd "53"^^xsd1:integer ;
+    fs:GausCurv "0.095"^^xsd1:float ;
+    fs:GrayVol "3088.0"^^xsd1:float ;
+    fs:MeanCurv "0.15"^^xsd1:float ;
+    fs:NumVert "1537"^^xsd1:integer ;
+    fs:SurfArea "1010.0"^^xsd1:float ;
+    fs:ThickAvg "2.705"^^xsd1:float ;
+    fs:ThickStd "0.511"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_and_S_cingul-Mid-Post .
+
+<http://nidm.nidash.org/iri/3abb5d42d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.0"^^xsd1:float ;
+    fs:FoldInd "17"^^xsd1:integer ;
+    fs:GausCurv "0.11"^^xsd1:float ;
+    fs:GrayVol "1411.0"^^xsd1:float ;
+    fs:MeanCurv "0.202"^^xsd1:float ;
+    fs:NumVert "514"^^xsd1:integer ;
+    fs:SurfArea "321.0"^^xsd1:float ;
+    fs:ThickAvg "3.129"^^xsd1:float ;
+    fs:ThickStd "0.492"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_cingul-Post-dorsal .
+
+<http://nidm.nidash.org/iri/3abb65dad3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.1"^^xsd1:float ;
+    fs:FoldInd "8"^^xsd1:integer ;
+    fs:GausCurv "0.115"^^xsd1:float ;
+    fs:GrayVol "503.0"^^xsd1:float ;
+    fs:MeanCurv "0.177"^^xsd1:float ;
+    fs:NumVert "265"^^xsd1:integer ;
+    fs:SurfArea "132.0"^^xsd1:float ;
+    fs:ThickAvg "2.958"^^xsd1:float ;
+    fs:ThickStd "0.702"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_cingul-Post-ventral .
+
+<http://nidm.nidash.org/iri/3abb6e90d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "18.1"^^xsd1:float ;
+    fs:FoldInd "149"^^xsd1:integer ;
+    fs:GausCurv "0.152"^^xsd1:float ;
+    fs:GrayVol "3733.0"^^xsd1:float ;
+    fs:MeanCurv "0.183"^^xsd1:float ;
+    fs:NumVert "2756"^^xsd1:integer ;
+    fs:SurfArea "1471.0"^^xsd1:float ;
+    fs:ThickAvg "2.139"^^xsd1:float ;
+    fs:ThickStd "0.65"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_cuneus .
+
+<http://nidm.nidash.org/iri/3abb7764d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.7"^^xsd1:float ;
+    fs:FoldInd "29"^^xsd1:integer ;
+    fs:GausCurv "0.065"^^xsd1:float ;
+    fs:GrayVol "3516.0"^^xsd1:float ;
+    fs:MeanCurv "0.161"^^xsd1:float ;
+    fs:NumVert "1371"^^xsd1:integer ;
+    fs:SurfArea "906.0"^^xsd1:float ;
+    fs:ThickAvg "3.007"^^xsd1:float ;
+    fs:ThickStd "0.456"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_front_inf-Opercular .
+
+<http://nidm.nidash.org/iri/3abb8010d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.8"^^xsd1:float ;
+    fs:FoldInd "8"^^xsd1:integer ;
+    fs:GausCurv "0.095"^^xsd1:float ;
+    fs:GrayVol "778.0"^^xsd1:float ;
+    fs:MeanCurv "0.171"^^xsd1:float ;
+    fs:NumVert "280"^^xsd1:integer ;
+    fs:SurfArea "189.0"^^xsd1:float ;
+    fs:ThickAvg "3.015"^^xsd1:float ;
+    fs:ThickStd "0.461"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_front_inf-Orbital .
+
+<http://nidm.nidash.org/iri/3abb8c90d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.1"^^xsd1:float ;
+    fs:FoldInd "34"^^xsd1:integer ;
+    fs:GausCurv "0.105"^^xsd1:float ;
+    fs:GrayVol "2389.0"^^xsd1:float ;
+    fs:MeanCurv "0.197"^^xsd1:float ;
+    fs:NumVert "915"^^xsd1:integer ;
+    fs:SurfArea "611.0"^^xsd1:float ;
+    fs:ThickAvg "2.836"^^xsd1:float ;
+    fs:ThickStd "0.464"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_front_inf-Triangul .
+
+<http://nidm.nidash.org/iri/3abb95b4d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "18.5"^^xsd1:float ;
+    fs:FoldInd "171"^^xsd1:integer ;
+    fs:GausCurv "0.111"^^xsd1:float ;
+    fs:GrayVol "11202.0"^^xsd1:float ;
+    fs:MeanCurv "0.195"^^xsd1:float ;
+    fs:NumVert "4395"^^xsd1:integer ;
+    fs:SurfArea "2861.0"^^xsd1:float ;
+    fs:ThickAvg "2.868"^^xsd1:float ;
+    fs:ThickStd "0.559"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_front_middle .
+
+<http://nidm.nidash.org/iri/3abb9eecd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "31.9"^^xsd1:float ;
+    fs:FoldInd "321"^^xsd1:integer ;
+    fs:GausCurv "0.099"^^xsd1:float ;
+    fs:GrayVol "18246.0"^^xsd1:float ;
+    fs:MeanCurv "0.171"^^xsd1:float ;
+    fs:NumVert "7469"^^xsd1:integer ;
+    fs:SurfArea "4773.0"^^xsd1:float ;
+    fs:ThickAvg "2.907"^^xsd1:float ;
+    fs:ThickStd "0.646"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_front_sup .
+
+<http://nidm.nidash.org/iri/3abba78ed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.4"^^xsd1:float ;
+    fs:FoldInd "9"^^xsd1:integer ;
+    fs:GausCurv "0.094"^^xsd1:float ;
+    fs:GrayVol "1223.0"^^xsd1:float ;
+    fs:MeanCurv "0.137"^^xsd1:float ;
+    fs:NumVert "426"^^xsd1:integer ;
+    fs:SurfArea "266.0"^^xsd1:float ;
+    fs:ThickAvg "3.919"^^xsd1:float ;
+    fs:ThickStd "0.743"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_Ins_lg_and_S_cent_ins .
+
+<http://nidm.nidash.org/iri/3abbb058d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.5"^^xsd1:float ;
+    fs:FoldInd "15"^^xsd1:integer ;
+    fs:GausCurv "0.105"^^xsd1:float ;
+    fs:GrayVol "1906.0"^^xsd1:float ;
+    fs:MeanCurv "0.164"^^xsd1:float ;
+    fs:NumVert "606"^^xsd1:integer ;
+    fs:SurfArea "368.0"^^xsd1:float ;
+    fs:ThickAvg "3.564"^^xsd1:float ;
+    fs:ThickStd "0.813"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_insular_short .
+
+<http://nidm.nidash.org/iri/3abbb8f0d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "8.7"^^xsd1:float ;
+    fs:FoldInd "79"^^xsd1:integer ;
+    fs:GausCurv "0.083"^^xsd1:float ;
+    fs:GrayVol "6479.0"^^xsd1:float ;
+    fs:MeanCurv "0.165"^^xsd1:float ;
+    fs:NumVert "2706"^^xsd1:integer ;
+    fs:SurfArea "1633.0"^^xsd1:float ;
+    fs:ThickAvg "2.954"^^xsd1:float ;
+    fs:ThickStd "0.489"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_occipital_middle .
+
+<http://nidm.nidash.org/iri/3abbc19cd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "11.2"^^xsd1:float ;
+    fs:FoldInd "191"^^xsd1:integer ;
+    fs:GausCurv "0.109"^^xsd1:float ;
+    fs:GrayVol "3837.0"^^xsd1:float ;
+    fs:MeanCurv "0.163"^^xsd1:float ;
+    fs:NumVert "2098"^^xsd1:integer ;
+    fs:SurfArea "1157.0"^^xsd1:float ;
+    fs:ThickAvg "2.647"^^xsd1:float ;
+    fs:ThickStd "0.471"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_occipital_sup .
+
+<http://nidm.nidash.org/iri/3abbca66d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "8.3"^^xsd1:float ;
+    fs:FoldInd "64"^^xsd1:integer ;
+    fs:GausCurv "0.08"^^xsd1:float ;
+    fs:GrayVol "5521.0"^^xsd1:float ;
+    fs:MeanCurv "0.155"^^xsd1:float ;
+    fs:NumVert "2463"^^xsd1:integer ;
+    fs:SurfArea "1456.0"^^xsd1:float ;
+    fs:ThickAvg "2.893"^^xsd1:float ;
+    fs:ThickStd "0.497"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_oc-temp_lat-fusifor .
+
+<http://nidm.nidash.org/iri/3abbd330d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "20.6"^^xsd1:float ;
+    fs:FoldInd "138"^^xsd1:integer ;
+    fs:GausCurv "0.131"^^xsd1:float ;
+    fs:GrayVol "4412.0"^^xsd1:float ;
+    fs:MeanCurv "0.184"^^xsd1:float ;
+    fs:NumVert "3443"^^xsd1:integer ;
+    fs:SurfArea "1869.0"^^xsd1:float ;
+    fs:ThickAvg "1.994"^^xsd1:float ;
+    fs:ThickStd "0.637"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_oc-temp_med-Lingual .
+
+<http://nidm.nidash.org/iri/3abbdbfad3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "8.3"^^xsd1:float ;
+    fs:FoldInd "75"^^xsd1:integer ;
+    fs:GausCurv "0.164"^^xsd1:float ;
+    fs:GrayVol "3803.0"^^xsd1:float ;
+    fs:MeanCurv "0.203"^^xsd1:float ;
+    fs:NumVert "1483"^^xsd1:integer ;
+    fs:SurfArea "955.0"^^xsd1:float ;
+    fs:ThickAvg "3.066"^^xsd1:float ;
+    fs:ThickStd "0.941"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_oc-temp_med-Parahip .
+
+<http://nidm.nidash.org/iri/3abbe4bad3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "15.8"^^xsd1:float ;
+    fs:FoldInd "169"^^xsd1:integer ;
+    fs:GausCurv "0.168"^^xsd1:float ;
+    fs:GrayVol "7249.0"^^xsd1:float ;
+    fs:MeanCurv "0.2"^^xsd1:float ;
+    fs:NumVert "2909"^^xsd1:integer ;
+    fs:SurfArea "1829.0"^^xsd1:float ;
+    fs:ThickAvg "2.837"^^xsd1:float ;
+    fs:ThickStd "0.858"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_orbital .
+
+<http://nidm.nidash.org/iri/3abbed66d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "9.3"^^xsd1:float ;
+    fs:FoldInd "87"^^xsd1:integer ;
+    fs:GausCurv "0.071"^^xsd1:float ;
+    fs:GrayVol "8622.0"^^xsd1:float ;
+    fs:MeanCurv "0.161"^^xsd1:float ;
+    fs:NumVert "3280"^^xsd1:integer ;
+    fs:SurfArea "2086.0"^^xsd1:float ;
+    fs:ThickAvg "3.082"^^xsd1:float ;
+    fs:ThickStd "0.593"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_pariet_inf-Angular .
+
+<http://nidm.nidash.org/iri/3abbf64ed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "7.6"^^xsd1:float ;
+    fs:FoldInd "62"^^xsd1:integer ;
+    fs:GausCurv "0.063"^^xsd1:float ;
+    fs:GrayVol "7153.0"^^xsd1:float ;
+    fs:MeanCurv "0.152"^^xsd1:float ;
+    fs:NumVert "3011"^^xsd1:integer ;
+    fs:SurfArea "1937.0"^^xsd1:float ;
+    fs:ThickAvg "2.982"^^xsd1:float ;
+    fs:ThickStd "0.532"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_pariet_inf-Supramar .
+
+<http://nidm.nidash.org/iri/3abbfefad3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "6.2"^^xsd1:float ;
+    fs:FoldInd "39"^^xsd1:integer ;
+    fs:GausCurv "0.064"^^xsd1:float ;
+    fs:GrayVol "5108.0"^^xsd1:float ;
+    fs:MeanCurv "0.144"^^xsd1:float ;
+    fs:NumVert "2456"^^xsd1:integer ;
+    fs:SurfArea "1600.0"^^xsd1:float ;
+    fs:ThickAvg "2.655"^^xsd1:float ;
+    fs:ThickStd "0.523"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_parietal_sup .
+
+<http://nidm.nidash.org/iri/3abc079cd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "8.5"^^xsd1:float ;
+    fs:FoldInd "53"^^xsd1:integer ;
+    fs:GausCurv "0.077"^^xsd1:float ;
+    fs:GrayVol "3841.0"^^xsd1:float ;
+    fs:MeanCurv "0.131"^^xsd1:float ;
+    fs:NumVert "2493"^^xsd1:integer ;
+    fs:SurfArea "1233.0"^^xsd1:float ;
+    fs:ThickAvg "2.347"^^xsd1:float ;
+    fs:ThickStd "0.482"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_postcentral .
+
+<http://nidm.nidash.org/iri/3abc1048d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "12.8"^^xsd1:float ;
+    fs:FoldInd "163"^^xsd1:integer ;
+    fs:GausCurv "0.551"^^xsd1:float ;
+    fs:GrayVol "5498.0"^^xsd1:float ;
+    fs:MeanCurv "0.151"^^xsd1:float ;
+    fs:NumVert "2721"^^xsd1:integer ;
+    fs:SurfArea "1430.0"^^xsd1:float ;
+    fs:ThickAvg "2.88"^^xsd1:float ;
+    fs:ThickStd "0.398"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_precentral .
+
+<http://nidm.nidash.org/iri/3abc9572d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "9.5"^^xsd1:float ;
+    fs:FoldInd "85"^^xsd1:integer ;
+    fs:GausCurv "0.077"^^xsd1:float ;
+    fs:GrayVol "6852.0"^^xsd1:float ;
+    fs:MeanCurv "0.164"^^xsd1:float ;
+    fs:NumVert "3132"^^xsd1:integer ;
+    fs:SurfArea "2005.0"^^xsd1:float ;
+    fs:ThickAvg "2.651"^^xsd1:float ;
+    fs:ThickStd "0.5"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_precuneus .
+
+<http://nidm.nidash.org/iri/3abc9ea0d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.3"^^xsd1:float ;
+    fs:FoldInd "45"^^xsd1:integer ;
+    fs:GausCurv "0.141"^^xsd1:float ;
+    fs:GrayVol "1809.0"^^xsd1:float ;
+    fs:MeanCurv "0.187"^^xsd1:float ;
+    fs:NumVert "830"^^xsd1:integer ;
+    fs:SurfArea "541.0"^^xsd1:float ;
+    fs:ThickAvg "2.425"^^xsd1:float ;
+    fs:ThickStd "0.656"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_rectus .
+
+<http://nidm.nidash.org/iri/3abca71ad3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.8"^^xsd1:float ;
+    fs:FoldInd "4"^^xsd1:integer ;
+    fs:GausCurv "0.061"^^xsd1:float ;
+    fs:GrayVol "612.0"^^xsd1:float ;
+    fs:MeanCurv "0.096"^^xsd1:float ;
+    fs:NumVert "329"^^xsd1:integer ;
+    fs:SurfArea "197.0"^^xsd1:float ;
+    fs:ThickAvg "2.968"^^xsd1:float ;
+    fs:ThickStd "0.902"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_subcallosal .
+
+<http://nidm.nidash.org/iri/3abcaf80d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.9"^^xsd1:float ;
+    fs:FoldInd "30"^^xsd1:integer ;
+    fs:GausCurv "0.136"^^xsd1:float ;
+    fs:GrayVol "1018.0"^^xsd1:float ;
+    fs:MeanCurv "0.155"^^xsd1:float ;
+    fs:NumVert "695"^^xsd1:integer ;
+    fs:SurfArea "313.0"^^xsd1:float ;
+    fs:ThickAvg "2.641"^^xsd1:float ;
+    fs:ThickStd "0.381"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_temp_sup-G_T_transv .
+
+<http://nidm.nidash.org/iri/3abcb822d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "6.3"^^xsd1:float ;
+    fs:FoldInd "46"^^xsd1:integer ;
+    fs:GausCurv "0.078"^^xsd1:float ;
+    fs:GrayVol "6250.0"^^xsd1:float ;
+    fs:MeanCurv "0.166"^^xsd1:float ;
+    fs:NumVert "1977"^^xsd1:integer ;
+    fs:SurfArea "1321.0"^^xsd1:float ;
+    fs:ThickAvg "3.268"^^xsd1:float ;
+    fs:ThickStd "0.758"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_temp_sup-Lateral .
+
+<http://nidm.nidash.org/iri/3abcc09cd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.4"^^xsd1:float ;
+    fs:FoldInd "7"^^xsd1:integer ;
+    fs:GausCurv "0.053"^^xsd1:float ;
+    fs:GrayVol "1778.0"^^xsd1:float ;
+    fs:MeanCurv "0.143"^^xsd1:float ;
+    fs:NumVert "581"^^xsd1:integer ;
+    fs:SurfArea "419.0"^^xsd1:float ;
+    fs:ThickAvg "3.382"^^xsd1:float ;
+    fs:ThickStd "0.785"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_temp_sup-Plan_polar .
+
+<http://nidm.nidash.org/iri/3abcc920d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.6"^^xsd1:float ;
+    fs:FoldInd "20"^^xsd1:integer ;
+    fs:GausCurv "0.069"^^xsd1:float ;
+    fs:GrayVol "2236.0"^^xsd1:float ;
+    fs:MeanCurv "0.139"^^xsd1:float ;
+    fs:NumVert "1060"^^xsd1:integer ;
+    fs:SurfArea "697.0"^^xsd1:float ;
+    fs:ThickAvg "2.814"^^xsd1:float ;
+    fs:ThickStd "0.531"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_temp_sup-Plan_tempo .
+
+<http://nidm.nidash.org/iri/3abcd2d0d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "15.4"^^xsd1:float ;
+    fs:FoldInd "643"^^xsd1:integer ;
+    fs:GausCurv "0.13"^^xsd1:float ;
+    fs:GrayVol "6908.0"^^xsd1:float ;
+    fs:MeanCurv "0.183"^^xsd1:float ;
+    fs:NumVert "2799"^^xsd1:integer ;
+    fs:SurfArea "1701.0"^^xsd1:float ;
+    fs:ThickAvg "3.098"^^xsd1:float ;
+    fs:ThickStd "0.814"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_temporal_inf .
+
+<http://nidm.nidash.org/iri/3abcdb22d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "7.8"^^xsd1:float ;
+    fs:FoldInd "67"^^xsd1:integer ;
+    fs:GausCurv "0.069"^^xsd1:float ;
+    fs:GrayVol "8450.0"^^xsd1:float ;
+    fs:MeanCurv "0.161"^^xsd1:float ;
+    fs:NumVert "2811"^^xsd1:integer ;
+    fs:SurfArea "1857.0"^^xsd1:float ;
+    fs:ThickAvg "3.281"^^xsd1:float ;
+    fs:ThickStd "0.645"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:G_temporal_middle .
+
+<http://nidm.nidash.org/iri/3abce360d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.7"^^xsd1:float ;
+    fs:FoldInd "4"^^xsd1:integer ;
+    fs:GausCurv "0.037"^^xsd1:float ;
+    fs:GrayVol "647.0"^^xsd1:float ;
+    fs:MeanCurv "0.117"^^xsd1:float ;
+    fs:NumVert "450"^^xsd1:integer ;
+    fs:SurfArea "287.0"^^xsd1:float ;
+    fs:ThickAvg "2.307"^^xsd1:float ;
+    fs:ThickStd "0.639"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:Lat_Fis-ant-Horizont .
+
+<http://nidm.nidash.org/iri/3abcebeed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.3"^^xsd1:float ;
+    fs:FoldInd "2"^^xsd1:integer ;
+    fs:GausCurv "0.057"^^xsd1:float ;
+    fs:GrayVol "303.0"^^xsd1:float ;
+    fs:MeanCurv "0.178"^^xsd1:float ;
+    fs:NumVert "132"^^xsd1:integer ;
+    fs:SurfArea "92.0"^^xsd1:float ;
+    fs:ThickAvg "2.842"^^xsd1:float ;
+    fs:ThickStd "0.616"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:Lat_Fis-ant-Vertical .
+
+<http://nidm.nidash.org/iri/3abcf440d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.7"^^xsd1:float ;
+    fs:FoldInd "13"^^xsd1:integer ;
+    fs:GausCurv "0.046"^^xsd1:float ;
+    fs:GrayVol "1974.0"^^xsd1:float ;
+    fs:MeanCurv "0.127"^^xsd1:float ;
+    fs:NumVert "1397"^^xsd1:integer ;
+    fs:SurfArea "924.0"^^xsd1:float ;
+    fs:ThickAvg "2.559"^^xsd1:float ;
+    fs:ThickStd "0.449"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:Lat_Fis-post .
+
+<http://nidm.nidash.org/iri/3abcfca6d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "14.3"^^xsd1:float ;
+    fs:FoldInd "156"^^xsd1:integer ;
+    fs:GausCurv "0.229"^^xsd1:float ;
+    fs:GrayVol "3744.0"^^xsd1:float ;
+    fs:MeanCurv "0.168"^^xsd1:float ;
+    fs:NumVert "3002"^^xsd1:integer ;
+    fs:SurfArea "1546.0"^^xsd1:float ;
+    fs:ThickAvg "2.139"^^xsd1:float ;
+    fs:ThickStd "0.553"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:Pole_occipital .
+
+<http://nidm.nidash.org/iri/3abd0502d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "7.0"^^xsd1:float ;
+    fs:FoldInd "49"^^xsd1:integer ;
+    fs:GausCurv "0.119"^^xsd1:float ;
+    fs:GrayVol "5333.0"^^xsd1:float ;
+    fs:MeanCurv "0.183"^^xsd1:float ;
+    fs:NumVert "1572"^^xsd1:integer ;
+    fs:SurfArea "1016.0"^^xsd1:float ;
+    fs:ThickAvg "3.497"^^xsd1:float ;
+    fs:ThickStd "0.902"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:Pole_temporal .
+
+<http://nidm.nidash.org/iri/3abd0d86d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "9.2"^^xsd1:float ;
+    fs:FoldInd "66"^^xsd1:integer ;
+    fs:GausCurv "0.085"^^xsd1:float ;
+    fs:GrayVol "3335.0"^^xsd1:float ;
+    fs:MeanCurv "0.167"^^xsd1:float ;
+    fs:NumVert "2807"^^xsd1:integer ;
+    fs:SurfArea "1916.0"^^xsd1:float ;
+    fs:ThickAvg "1.954"^^xsd1:float ;
+    fs:ThickStd "0.658"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_calcarine .
+
+<http://nidm.nidash.org/iri/3abd1632d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "6.0"^^xsd1:float ;
+    fs:FoldInd "25"^^xsd1:integer ;
+    fs:GausCurv "0.044"^^xsd1:float ;
+    fs:GrayVol "3676.0"^^xsd1:float ;
+    fs:MeanCurv "0.13"^^xsd1:float ;
+    fs:NumVert "2996"^^xsd1:integer ;
+    fs:SurfArea "2026.0"^^xsd1:float ;
+    fs:ThickAvg "2.045"^^xsd1:float ;
+    fs:ThickStd "0.553"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_central .
+
+<http://nidm.nidash.org/iri/3abd1e66d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.8"^^xsd1:float ;
+    fs:FoldInd "9"^^xsd1:integer ;
+    fs:GausCurv "0.051"^^xsd1:float ;
+    fs:GrayVol "1912.0"^^xsd1:float ;
+    fs:MeanCurv "0.111"^^xsd1:float ;
+    fs:NumVert "1319"^^xsd1:integer ;
+    fs:SurfArea "880.0"^^xsd1:float ;
+    fs:ThickAvg "2.315"^^xsd1:float ;
+    fs:ThickStd "0.376"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_cingul-Marginalis .
+
+<http://nidm.nidash.org/iri/3abd2b68d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.6"^^xsd1:float ;
+    fs:FoldInd "8"^^xsd1:integer ;
+    fs:GausCurv "0.054"^^xsd1:float ;
+    fs:GrayVol "1395.0"^^xsd1:float ;
+    fs:MeanCurv "0.146"^^xsd1:float ;
+    fs:NumVert "670"^^xsd1:integer ;
+    fs:SurfArea "453.0"^^xsd1:float ;
+    fs:ThickAvg "3.188"^^xsd1:float ;
+    fs:ThickStd "0.704"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_circular_insula_ant .
+
+<http://nidm.nidash.org/iri/3abd33e2d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.3"^^xsd1:float ;
+    fs:FoldInd "7"^^xsd1:integer ;
+    fs:GausCurv "0.125"^^xsd1:float ;
+    fs:GrayVol "1976.0"^^xsd1:float ;
+    fs:MeanCurv "0.094"^^xsd1:float ;
+    fs:NumVert "1267"^^xsd1:integer ;
+    fs:SurfArea "824.0"^^xsd1:float ;
+    fs:ThickAvg "2.803"^^xsd1:float ;
+    fs:ThickStd "0.737"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_circular_insula_inf .
+
+<http://nidm.nidash.org/iri/3abd3c66d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.2"^^xsd1:float ;
+    fs:FoldInd "13"^^xsd1:integer ;
+    fs:GausCurv "0.043"^^xsd1:float ;
+    fs:GrayVol "2078.0"^^xsd1:float ;
+    fs:MeanCurv "0.114"^^xsd1:float ;
+    fs:NumVert "1392"^^xsd1:integer ;
+    fs:SurfArea "934.0"^^xsd1:float ;
+    fs:ThickAvg "2.522"^^xsd1:float ;
+    fs:ThickStd "0.527"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_circular_insula_sup .
+
+<http://nidm.nidash.org/iri/3abd4512d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.9"^^xsd1:float ;
+    fs:FoldInd "16"^^xsd1:integer ;
+    fs:GausCurv "0.046"^^xsd1:float ;
+    fs:GrayVol "2359.0"^^xsd1:float ;
+    fs:MeanCurv "0.127"^^xsd1:float ;
+    fs:NumVert "1456"^^xsd1:integer ;
+    fs:SurfArea "972.0"^^xsd1:float ;
+    fs:ThickAvg "2.62"^^xsd1:float ;
+    fs:ThickStd "0.554"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_collat_transv_ant .
+
+<http://nidm.nidash.org/iri/3abd4d82d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.1"^^xsd1:float ;
+    fs:FoldInd "11"^^xsd1:integer ;
+    fs:GausCurv "0.073"^^xsd1:float ;
+    fs:GrayVol "710.0"^^xsd1:float ;
+    fs:MeanCurv "0.167"^^xsd1:float ;
+    fs:NumVert "669"^^xsd1:integer ;
+    fs:SurfArea "426.0"^^xsd1:float ;
+    fs:ThickAvg "2.009"^^xsd1:float ;
+    fs:ThickStd "0.374"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_collat_transv_post .
+
+<http://nidm.nidash.org/iri/3abd55f2d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.9"^^xsd1:float ;
+    fs:FoldInd "27"^^xsd1:integer ;
+    fs:GausCurv "0.057"^^xsd1:float ;
+    fs:GrayVol "3092.0"^^xsd1:float ;
+    fs:MeanCurv "0.133"^^xsd1:float ;
+    fs:NumVert "2066"^^xsd1:integer ;
+    fs:SurfArea "1372.0"^^xsd1:float ;
+    fs:ThickAvg "2.283"^^xsd1:float ;
+    fs:ThickStd "0.486"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_front_inf .
+
+<http://nidm.nidash.org/iri/3abd5e4ed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.2"^^xsd1:float ;
+    fs:FoldInd "28"^^xsd1:integer ;
+    fs:GausCurv "0.052"^^xsd1:float ;
+    fs:GrayVol "3317.0"^^xsd1:float ;
+    fs:MeanCurv "0.138"^^xsd1:float ;
+    fs:NumVert "2065"^^xsd1:integer ;
+    fs:SurfArea "1406.0"^^xsd1:float ;
+    fs:ThickAvg "2.298"^^xsd1:float ;
+    fs:ThickStd "0.452"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_front_middle .
+
+<http://nidm.nidash.org/iri/3abd66b4d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.8"^^xsd1:float ;
+    fs:FoldInd "19"^^xsd1:integer ;
+    fs:GausCurv "0.037"^^xsd1:float ;
+    fs:GrayVol "3835.0"^^xsd1:float ;
+    fs:MeanCurv "0.12"^^xsd1:float ;
+    fs:NumVert "2400"^^xsd1:integer ;
+    fs:SurfArea "1624.0"^^xsd1:float ;
+    fs:ThickAvg "2.46"^^xsd1:float ;
+    fs:ThickStd "0.433"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_front_sup .
+
+<http://nidm.nidash.org/iri/3abd6fd8d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.0"^^xsd1:float ;
+    fs:FoldInd "5"^^xsd1:integer ;
+    fs:GausCurv "0.051"^^xsd1:float ;
+    fs:GrayVol "565.0"^^xsd1:float ;
+    fs:MeanCurv "0.145"^^xsd1:float ;
+    fs:NumVert "447"^^xsd1:integer ;
+    fs:SurfArea "303.0"^^xsd1:float ;
+    fs:ThickAvg "2.424"^^xsd1:float ;
+    fs:ThickStd "0.293"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_interm_prim-Jensen .
+
+<http://nidm.nidash.org/iri/3abd785cd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "6.0"^^xsd1:float ;
+    fs:FoldInd "35"^^xsd1:integer ;
+    fs:GausCurv "0.041"^^xsd1:float ;
+    fs:GrayVol "5115.0"^^xsd1:float ;
+    fs:MeanCurv "0.125"^^xsd1:float ;
+    fs:NumVert "3373"^^xsd1:integer ;
+    fs:SurfArea "2213.0"^^xsd1:float ;
+    fs:ThickAvg "2.414"^^xsd1:float ;
+    fs:ThickStd "0.405"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_intrapariet_and_P_trans .
+
+<http://nidm.nidash.org/iri/3abd80a4d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "1.7"^^xsd1:float ;
+    fs:FoldInd "9"^^xsd1:integer ;
+    fs:GausCurv "0.048"^^xsd1:float ;
+    fs:GrayVol "1232.0"^^xsd1:float ;
+    fs:MeanCurv "0.136"^^xsd1:float ;
+    fs:NumVert "825"^^xsd1:integer ;
+    fs:SurfArea "574.0"^^xsd1:float ;
+    fs:ThickAvg "2.458"^^xsd1:float ;
+    fs:ThickStd "0.367"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_oc_middle_and_Lunatus .
+
+<http://nidm.nidash.org/iri/3abd8914d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.5"^^xsd1:float ;
+    fs:FoldInd "29"^^xsd1:integer ;
+    fs:GausCurv "0.051"^^xsd1:float ;
+    fs:GrayVol "3058.0"^^xsd1:float ;
+    fs:MeanCurv "0.145"^^xsd1:float ;
+    fs:NumVert "2038"^^xsd1:integer ;
+    fs:SurfArea "1364.0"^^xsd1:float ;
+    fs:ThickAvg "2.424"^^xsd1:float ;
+    fs:ThickStd "0.364"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_oc_sup_and_transversal .
+
+<http://nidm.nidash.org/iri/3abd9166d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.8"^^xsd1:float ;
+    fs:FoldInd "5"^^xsd1:integer ;
+    fs:GausCurv "0.041"^^xsd1:float ;
+    fs:GrayVol "801.0"^^xsd1:float ;
+    fs:MeanCurv "0.13"^^xsd1:float ;
+    fs:NumVert "496"^^xsd1:integer ;
+    fs:SurfArea "323.0"^^xsd1:float ;
+    fs:ThickAvg "2.615"^^xsd1:float ;
+    fs:ThickStd "0.615"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_occipital_ant .
+
+<http://nidm.nidash.org/iri/3abd99c2d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.1"^^xsd1:float ;
+    fs:FoldInd "10"^^xsd1:integer ;
+    fs:GausCurv "0.046"^^xsd1:float ;
+    fs:GrayVol "1688.0"^^xsd1:float ;
+    fs:MeanCurv "0.125"^^xsd1:float ;
+    fs:NumVert "1121"^^xsd1:integer ;
+    fs:SurfArea "745.0"^^xsd1:float ;
+    fs:ThickAvg "2.621"^^xsd1:float ;
+    fs:ThickStd "0.508"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_oc-temp_lat .
+
+<http://nidm.nidash.org/iri/3abda21ed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.1"^^xsd1:float ;
+    fs:FoldInd "23"^^xsd1:integer ;
+    fs:GausCurv "0.048"^^xsd1:float ;
+    fs:GrayVol "3150.0"^^xsd1:float ;
+    fs:MeanCurv "0.132"^^xsd1:float ;
+    fs:NumVert "2047"^^xsd1:integer ;
+    fs:SurfArea "1378.0"^^xsd1:float ;
+    fs:ThickAvg "2.455"^^xsd1:float ;
+    fs:ThickStd "0.491"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_oc-temp_med_and_Lingual .
+
+<http://nidm.nidash.org/iri/3abdaa8ed3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.8"^^xsd1:float ;
+    fs:FoldInd "5"^^xsd1:integer ;
+    fs:GausCurv "0.037"^^xsd1:float ;
+    fs:GrayVol "639.0"^^xsd1:float ;
+    fs:MeanCurv "0.126"^^xsd1:float ;
+    fs:NumVert "506"^^xsd1:integer ;
+    fs:SurfArea "329.0"^^xsd1:float ;
+    fs:ThickAvg "2.145"^^xsd1:float ;
+    fs:ThickStd "0.364"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_orbital_lateral .
+
+<http://nidm.nidash.org/iri/3abdb7d6d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.1"^^xsd1:float ;
+    fs:FoldInd "14"^^xsd1:integer ;
+    fs:GausCurv "0.062"^^xsd1:float ;
+    fs:GrayVol "1432.0"^^xsd1:float ;
+    fs:MeanCurv "0.124"^^xsd1:float ;
+    fs:NumVert "970"^^xsd1:integer ;
+    fs:SurfArea "671.0"^^xsd1:float ;
+    fs:ThickAvg "2.023"^^xsd1:float ;
+    fs:ThickStd "0.985"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_orbital_med-olfact .
+
+<http://nidm.nidash.org/iri/3abdc000d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "4.3"^^xsd1:float ;
+    fs:FoldInd "29"^^xsd1:integer ;
+    fs:GausCurv "0.079"^^xsd1:float ;
+    fs:GrayVol "2419.0"^^xsd1:float ;
+    fs:MeanCurv "0.161"^^xsd1:float ;
+    fs:NumVert "1373"^^xsd1:integer ;
+    fs:SurfArea "932.0"^^xsd1:float ;
+    fs:ThickAvg "2.314"^^xsd1:float ;
+    fs:ThickStd "0.684"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_orbital-H_Shaped .
+
+<http://nidm.nidash.org/iri/3abdc870d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "5.1"^^xsd1:float ;
+    fs:FoldInd "27"^^xsd1:integer ;
+    fs:GausCurv "0.047"^^xsd1:float ;
+    fs:GrayVol "3460.0"^^xsd1:float ;
+    fs:MeanCurv "0.128"^^xsd1:float ;
+    fs:NumVert "2524"^^xsd1:integer ;
+    fs:SurfArea "1544.0"^^xsd1:float ;
+    fs:ThickAvg "2.48"^^xsd1:float ;
+    fs:ThickStd "0.484"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_parieto_occipital .
+
+<http://nidm.nidash.org/iri/3abdd0ccd3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.5"^^xsd1:float ;
+    fs:FoldInd "31"^^xsd1:integer ;
+    fs:GausCurv "0.062"^^xsd1:float ;
+    fs:GrayVol "1490.0"^^xsd1:float ;
+    fs:MeanCurv "0.162"^^xsd1:float ;
+    fs:NumVert "1411"^^xsd1:integer ;
+    fs:SurfArea "883.0"^^xsd1:float ;
+    fs:ThickAvg "2.015"^^xsd1:float ;
+    fs:ThickStd "0.782"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_pericallosal .
+
+<http://nidm.nidash.org/iri/3abdd978d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "5.3"^^xsd1:float ;
+    fs:FoldInd "32"^^xsd1:integer ;
+    fs:GausCurv "0.049"^^xsd1:float ;
+    fs:GrayVol "3781.0"^^xsd1:float ;
+    fs:MeanCurv "0.131"^^xsd1:float ;
+    fs:NumVert "2630"^^xsd1:integer ;
+    fs:SurfArea "1696.0"^^xsd1:float ;
+    fs:ThickAvg "2.367"^^xsd1:float ;
+    fs:ThickStd "0.435"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_postcentral .
+
+<http://nidm.nidash.org/iri/3abde238d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.0"^^xsd1:float ;
+    fs:FoldInd "17"^^xsd1:integer ;
+    fs:GausCurv "0.044"^^xsd1:float ;
+    fs:GrayVol "2549.0"^^xsd1:float ;
+    fs:MeanCurv "0.135"^^xsd1:float ;
+    fs:NumVert "1592"^^xsd1:integer ;
+    fs:SurfArea "1078.0"^^xsd1:float ;
+    fs:ThickAvg "2.513"^^xsd1:float ;
+    fs:ThickStd "0.421"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_precentral-inf-part .
+
+<http://nidm.nidash.org/iri/3abdeab2d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "3.5"^^xsd1:float ;
+    fs:FoldInd "18"^^xsd1:integer ;
+    fs:GausCurv "0.048"^^xsd1:float ;
+    fs:GrayVol "2620.0"^^xsd1:float ;
+    fs:MeanCurv "0.135"^^xsd1:float ;
+    fs:NumVert "1663"^^xsd1:integer ;
+    fs:SurfArea "1126.0"^^xsd1:float ;
+    fs:ThickAvg "2.535"^^xsd1:float ;
+    fs:ThickStd "0.419"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_precentral-sup-part .
+
+<http://nidm.nidash.org/iri/3abdf318d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.3"^^xsd1:float ;
+    fs:FoldInd "2"^^xsd1:integer ;
+    fs:GausCurv "0.048"^^xsd1:float ;
+    fs:GrayVol "260.0"^^xsd1:float ;
+    fs:MeanCurv "0.159"^^xsd1:float ;
+    fs:NumVert "138"^^xsd1:integer ;
+    fs:SurfArea "92.0"^^xsd1:float ;
+    fs:ThickAvg "2.733"^^xsd1:float ;
+    fs:ThickStd "0.732"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_suborbital .
+
+<http://nidm.nidash.org/iri/3abdfbced3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.1"^^xsd1:float ;
+    fs:FoldInd "11"^^xsd1:integer ;
+    fs:GausCurv "0.036"^^xsd1:float ;
+    fs:GrayVol "1976.0"^^xsd1:float ;
+    fs:MeanCurv "0.124"^^xsd1:float ;
+    fs:NumVert "1349"^^xsd1:integer ;
+    fs:SurfArea "893.0"^^xsd1:float ;
+    fs:ThickAvg "2.34"^^xsd1:float ;
+    fs:ThickStd "0.374"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_subparietal .
+
+<http://nidm.nidash.org/iri/3abe0452d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "2.1"^^xsd1:float ;
+    fs:FoldInd "9"^^xsd1:integer ;
+    fs:GausCurv "0.034"^^xsd1:float ;
+    fs:GrayVol "1664.0"^^xsd1:float ;
+    fs:MeanCurv "0.132"^^xsd1:float ;
+    fs:NumVert "1137"^^xsd1:integer ;
+    fs:SurfArea "789.0"^^xsd1:float ;
+    fs:ThickAvg "2.538"^^xsd1:float ;
+    fs:ThickStd "0.551"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_temporal_inf .
+
+<http://nidm.nidash.org/iri/3abe0d62d3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "10.2"^^xsd1:float ;
+    fs:FoldInd "57"^^xsd1:integer ;
+    fs:GausCurv "0.041"^^xsd1:float ;
+    fs:GrayVol "10555.0"^^xsd1:float ;
+    fs:MeanCurv "0.124"^^xsd1:float ;
+    fs:NumVert "6024"^^xsd1:integer ;
+    fs:SurfArea "4050.0"^^xsd1:float ;
+    fs:ThickAvg "2.703"^^xsd1:float ;
+    fs:ThickStd "0.442"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_temporal_sup .
+
+<http://nidm.nidash.org/iri/3abe15aad3d011e2a755001e4fb1404c> a prov:Entity ;
+    fs:CurvInd "0.7"^^xsd1:float ;
+    fs:FoldInd "5"^^xsd1:integer ;
+    fs:GausCurv "0.046"^^xsd1:float ;
+    fs:GrayVol "603.0"^^xsd1:float ;
+    fs:MeanCurv "0.137"^^xsd1:float ;
+    fs:NumVert "364"^^xsd1:integer ;
+    fs:SurfArea "222.0"^^xsd1:float ;
+    fs:ThickAvg "2.782"^^xsd1:float ;
+    fs:ThickStd "0.721"^^xsd1:float ;
+    nidm:AnatomicalAnnotation fs:S_temporal_transverse .
+
+<http://nidm.nidash.org/iri/3ab819c0d3d011e2a755001e4fb1404c> a prov:Agent,
+        prov:Person ;
+    prov:label "satra" ;
+    foaf:name "satra" .
+
