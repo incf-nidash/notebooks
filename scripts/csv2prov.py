@@ -21,7 +21,7 @@ def safe_encode(x):
         return prov.Literal(int(x), prov.XSD['integer'])
     if isinstance(x, (float,)):
         return prov.Literal(x, prov.XSD['float'])
-    return pm.Literal(json.dumps(x), prov.XSD['string'])
+    return prov.Literal(json.dumps(x), prov.XSD['string'])
 
 def csv2provgraph(filename, n_rows=None):
     """
