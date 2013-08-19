@@ -21,7 +21,7 @@ def safe_encode(x):
         return prov.Literal(int(x), prov.XSD['integer'])
     if isinstance(x, (float,)):
         return prov.Literal(x, prov.XSD['float'])
-    return pm.Literal(json.dumps(x), pm.XSD['string'])
+    return pm.Literal(json.dumps(x), prov.XSD['string'])
 
 def csv2provgraph(filename, n_rows=None):
     """
@@ -109,8 +109,6 @@ def upload_graph(graph, endpoint=None, uri='http://test.nidm.org'):
         print(result)
         counter = endcounter
     print('Submitted %d statemnts' % N)
-
-def convert_and_upload(filename):
 
 if __name__ == "__main__":
     import argparse
