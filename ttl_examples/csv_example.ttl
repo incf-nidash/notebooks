@@ -1,0 +1,568 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix nidm: <http://nidm.nidash.org/terms/> .
+@prefix niiri: <http://nidm.nidash.org/iri/> .
+@prefix ns1: <http://nidm.nidash.org/iri/e0a421f00b2111e3bbf514109fcf6ae7/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <http://www.w3.org/2001/XMLSchema-datatypes#> .
+
+niiri:e0a421f00b2111e3bbf514109fcf6ae7 a nidm:csv_collection,
+        prov:Collection,
+        prov:Entity ;
+    prov:hadMember niiri:e1a8dade0b2111e38a8614109fcf6ae7,
+        niiri:e1a9327d0b2111e386b714109fcf6ae7,
+        niiri:e1a944b00b2111e3a89c14109fcf6ae7,
+        niiri:e1a9554a0b2111e3b04314109fcf6ae7,
+        niiri:e1a964a30b2111e3997414109fcf6ae7,
+        niiri:e1a972330b2111e3950514109fcf6ae7,
+        niiri:e1a97fde0b2111e3a27814109fcf6ae7,
+        niiri:e1a98d9e0b2111e3bdbc14109fcf6ae7,
+        niiri:e1a99b350b2111e38ab514109fcf6ae7,
+        niiri:e1a9a89c0b2111e3bb7714109fcf6ae7,
+        niiri:e1a9b8fa0b2111e3a1b514109fcf6ae7,
+        niiri:e1a9c6ba0b2111e3a7a114109fcf6ae7,
+        niiri:e1a9d4ab0b2111e3bfed14109fcf6ae7,
+        niiri:e1a9e2870b2111e3a78714109fcf6ae7,
+        niiri:e1a9f0b80b2111e3a43914109fcf6ae7,
+        niiri:e1a9fef00b2111e3b3c514109fcf6ae7,
+        niiri:e1aa0b2b0b2111e3868b14109fcf6ae7,
+        niiri:e1aa178c0b2111e3a71114109fcf6ae7,
+        niiri:e1aa23c50b2111e3873e14109fcf6ae7,
+        niiri:e1aa300a0b2111e38c3014109fcf6ae7,
+        niiri:e1aa3ce30b2111e3b4cd14109fcf6ae7,
+        niiri:e1aa48c50b2111e3810514109fcf6ae7,
+        niiri:e1aa54850b2111e39def14109fcf6ae7,
+        niiri:e1aa60510b2111e3b6a414109fcf6ae7,
+        niiri:e1aa6c300b2111e3966714109fcf6ae7,
+        niiri:e1aa7a730b2111e39e6e14109fcf6ae7,
+        niiri:e1aa89f50b2111e3963a14109fcf6ae7 ;
+    prov:label "ftp://www.nitrc.org/fcon_1000/htdocs/indi/adhd200/sites/brown/data/Brown_TestRelease_phenotypic.csv" ;
+    prov:wasDerivedFrom niiri:dfaabb8a0b2111e3a38914109fcf6ae7 ;
+    prov:wasGeneratedBy niiri:e0a42b700b2111e3a41514109fcf6ae7 .
+
+niiri:dfaabb8a0b2111e3a38914109fcf6ae7 a nidm:csv_file,
+        prov:Entity ;
+    nidm:sha512 "d1dfeb0e2310044144fffc5589f0226886d75e1fcdbdb06abfbd4d9ab3fc43aa791c8044e55ecb7b2f835f03e2c3232f1230ebec32a8d6e6e571f20e9df47170" ;
+    prov:location "ftp://www.nitrc.org/fcon_1000/htdocs/indi/adhd200/sites/brown/data/Brown_TestRelease_phenotypic.csv"^^xsd1:AnyURI .
+
+ns1:ADHD_Index a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "ADHD Index" ;
+    prov:location 8 .
+
+ns1:ADHD_Measure a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "ADHD Measure" ;
+    prov:location 7 .
+
+ns1:Age a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Age" ;
+    prov:location 3 .
+
+ns1:DX a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "DX" ;
+    prov:location 5 .
+
+ns1:Full2_IQ a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Full2 IQ" ;
+    prov:location 14 .
+
+ns1:Full4_IQ a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Full4 IQ" ;
+    prov:location 15 .
+
+ns1:Gender a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Gender" ;
+    prov:location 2 .
+
+ns1:Handedness a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Handedness" ;
+    prov:location 4 .
+
+ns1:Hyper_Impulsive a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Hyper/Impulsive" ;
+    prov:location 10 .
+
+ns1:IQ_Measure a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "IQ Measure" ;
+    prov:location 11 .
+
+ns1:Inattentive a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Inattentive" ;
+    prov:location 9 .
+
+ns1:Med_Status a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Med Status" ;
+    prov:location 16 .
+
+ns1:Performance_IQ a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Performance IQ" ;
+    prov:location 13 .
+
+ns1:QC_Anatomical_1 a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "QC_Anatomical_1" ;
+    prov:location 21 .
+
+ns1:QC_Anatomical_2 a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "QC_Anatomical_2" ;
+    prov:location 22 .
+
+ns1:QC_Rest_1 a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "QC_Rest_1" ;
+    prov:location 17 .
+
+ns1:QC_Rest_2 a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "QC_Rest_2" ;
+    prov:location 18 .
+
+ns1:QC_Rest_3 a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "QC_Rest_3" ;
+    prov:location 19 .
+
+ns1:QC_Rest_4 a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "QC_Rest_4" ;
+    prov:location 20 .
+
+ns1:ScanDir_ID a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "ScanDir ID" ;
+    prov:location 0 .
+
+ns1:Secondary_Dx a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Secondary Dx " ;
+    prov:location 6 .
+
+ns1:Site a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Site" ;
+    prov:location 1 .
+
+ns1:Verbal_IQ a nidm:csv_heading,
+        prov:Entity ;
+    prov:label "Verbal IQ" ;
+    prov:location 12 .
+
+niiri:e0a42b700b2111e3a41514109fcf6ae7 a prov:Activity ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:Role "LoggedInUser" ;
+            prov:agent niiri:e0a42fe30b2111e3bb2c14109fcf6ae7 ] ;
+    prov:startTime "2013-08-22T11:56:28.192879"^^xsd:dateTime ;
+    prov:wasAssociatedWith niiri:e0a42fe30b2111e3bb2c14109fcf6ae7 .
+
+niiri:e1a8dade0b2111e38a8614109fcf6ae7 a nidm:column_headers,
+        prov:Collection,
+        prov:Entity ;
+    prov:hadMember ns1:ADHD_Index,
+        ns1:ADHD_Measure,
+        ns1:Age,
+        ns1:DX,
+        ns1:Full2_IQ,
+        ns1:Full4_IQ,
+        ns1:Gender,
+        ns1:Handedness,
+        ns1:Hyper_Impulsive,
+        ns1:IQ_Measure,
+        ns1:Inattentive,
+        ns1:Med_Status,
+        ns1:Performance_IQ,
+        ns1:QC_Anatomical_1,
+        ns1:QC_Anatomical_2,
+        ns1:QC_Rest_1,
+        ns1:QC_Rest_2,
+        ns1:QC_Rest_3,
+        ns1:QC_Rest_4,
+        ns1:ScanDir_ID,
+        ns1:Secondary_Dx,
+        ns1:Site,
+        ns1:Verbal_IQ .
+
+niiri:e1a9327d0b2111e386b714109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "16.92"^^xsd1:float ;
+    ns1:Full4_IQ "120.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "104.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26001.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "133.0"^^xsd1:float ;
+    prov:location 1 .
+
+niiri:e1a944b00b2111e3a89c14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "15.68"^^xsd1:float ;
+    ns1:Full4_IQ "107.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "106.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26002.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "106.0"^^xsd1:float ;
+    prov:location 2 .
+
+niiri:e1a9554a0b2111e3b04314109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "14.99"^^xsd1:float ;
+    ns1:Full4_IQ "125.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "123.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26004.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "119.0"^^xsd1:float ;
+    prov:location 3 .
+
+niiri:e1a964a30b2111e3997414109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "15.16"^^xsd1:float ;
+    ns1:Full4_IQ "126.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "131.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26005.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "116.0"^^xsd1:float ;
+    prov:location 4 .
+
+niiri:e1a972330b2111e3950514109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "16.91"^^xsd1:float ;
+    ns1:Full4_IQ "97.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "0.0"^^xsd1:float ;
+    ns1:Performance_IQ "81.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26009.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "113.0"^^xsd1:float ;
+    prov:location 5 .
+
+niiri:e1a97fde0b2111e3a27814109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "16.21"^^xsd1:float ;
+    ns1:Full4_IQ "102.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "102.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26014.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "101.0"^^xsd1:float ;
+    prov:location 6 .
+
+niiri:e1a98d9e0b2111e3bdbc14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "15.2"^^xsd1:float ;
+    ns1:Full4_IQ "113.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "98.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26015.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "127.0"^^xsd1:float ;
+    prov:location 7 .
+
+niiri:e1a99b350b2111e38ab514109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "16.07"^^xsd1:float ;
+    ns1:Full4_IQ "109.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "96.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26016.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "120.0"^^xsd1:float ;
+    prov:location 8 .
+
+niiri:e1a9a89c0b2111e3bb7714109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "14.56"^^xsd1:float ;
+    ns1:Full4_IQ "89.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "87.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26017.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "95.0"^^xsd1:float ;
+    prov:location 9 .
+
+niiri:e1a9b8fa0b2111e3a1b514109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "17.83"^^xsd1:float ;
+    ns1:Full4_IQ "109.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "111.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26022.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "105.0"^^xsd1:float ;
+    prov:location 10 .
+
+niiri:e1a9c6ba0b2111e3a7a114109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "17.77"^^xsd1:float ;
+    ns1:Full4_IQ "85.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "83.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26024.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "89.0"^^xsd1:float ;
+    prov:location 11 .
+
+niiri:e1a9d4ab0b2111e3bfed14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "11.28"^^xsd1:float ;
+    ns1:Full4_IQ "106.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "103.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26027.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "108.0"^^xsd1:float ;
+    prov:location 12 .
+
+niiri:e1a9e2870b2111e3a78714109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "14.51"^^xsd1:float ;
+    ns1:Full4_IQ "123.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "119.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26030.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "121.0"^^xsd1:float ;
+    prov:location 13 .
+
+niiri:e1a9f0b80b2111e3a43914109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "14.19"^^xsd1:float ;
+    ns1:Full4_IQ "124.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "117.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26039.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "125.0"^^xsd1:float ;
+    prov:location 14 .
+
+niiri:e1a9fef00b2111e3b3c514109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "13.67"^^xsd1:float ;
+    ns1:Full4_IQ "102.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "93.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26040.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "111.0"^^xsd1:float ;
+    prov:location 15 .
+
+niiri:e1aa0b2b0b2111e3868b14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "13.68"^^xsd1:float ;
+    ns1:Full4_IQ "128.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "120.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "0.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26041.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "129.0"^^xsd1:float ;
+    prov:location 16 .
+
+niiri:e1aa178c0b2111e3a71114109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "13.82"^^xsd1:float ;
+    ns1:Full4_IQ "109.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "110.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26042.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "106.0"^^xsd1:float ;
+    prov:location 17 .
+
+niiri:e1aa23c50b2111e3873e14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "11.6"^^xsd1:float ;
+    ns1:Full4_IQ "129.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "127.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26043.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "125.0"^^xsd1:float ;
+    prov:location 18 .
+
+niiri:e1aa300a0b2111e38c3014109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "9.32"^^xsd1:float ;
+    ns1:Full4_IQ "107.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "93.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26044.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "119.0"^^xsd1:float ;
+    prov:location 19 .
+
+niiri:e1aa3ce30b2111e3b4cd14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "14.67"^^xsd1:float ;
+    ns1:Full4_IQ "111.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "109.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26045.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "109.0"^^xsd1:float ;
+    prov:location 20 .
+
+niiri:e1aa48c50b2111e3810514109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "8.5"^^xsd1:float ;
+    ns1:Full4_IQ "121.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "116.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26050.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "121.0"^^xsd1:float ;
+    prov:location 21 .
+
+niiri:e1aa54850b2111e39def14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "17.87"^^xsd1:float ;
+    ns1:Full4_IQ "112.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "109.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26052.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "111.0"^^xsd1:float ;
+    prov:location 22 .
+
+niiri:e1aa60510b2111e3b6a414109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "15.79"^^xsd1:float ;
+    ns1:Full4_IQ "120.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "111.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26053.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "123.0"^^xsd1:float ;
+    prov:location 23 .
+
+niiri:e1aa6c300b2111e3966714109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "12.02"^^xsd1:float ;
+    ns1:Full4_IQ "125.0"^^xsd1:float ;
+    ns1:Gender "0.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "109.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26054.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "136.0"^^xsd1:float ;
+    prov:location 24 .
+
+niiri:e1aa7a730b2111e39e6e14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "17.74"^^xsd1:float ;
+    ns1:Full4_IQ "116.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "119.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26055.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "109.0"^^xsd1:float ;
+    prov:location 25 .
+
+niiri:e1aa89f50b2111e3963a14109fcf6ae7 a nidm:csv_row,
+        prov:Entity ;
+    ns1:Age "12.0"^^xsd1:float ;
+    ns1:Full4_IQ "114.0"^^xsd1:float ;
+    ns1:Gender "1.0"^^xsd1:float ;
+    ns1:Handedness "1.0"^^xsd1:float ;
+    ns1:Performance_IQ "110.0"^^xsd1:float ;
+    ns1:QC_Anatomical_1 "1.0"^^xsd1:float ;
+    ns1:QC_Rest_1 "1.0"^^xsd1:float ;
+    ns1:ScanDir_ID "26057.0"^^xsd1:float ;
+    ns1:Site "2.0"^^xsd1:float ;
+    ns1:Verbal_IQ "114.0"^^xsd1:float ;
+    prov:location 26 .
+
+niiri:e0a42fe30b2111e3bb2c14109fcf6ae7 a prov:Agent,
+        prov:Person ;
+    prov:label "satra" ;
+    foaf:name "satra" .
+

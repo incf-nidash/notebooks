@@ -2,8 +2,12 @@
 """Upload a csv file as RDF to a SPARQL triplestore
 """
 
+from datetime import datetime as dt
 import json
+from hashlib import sha512
 import os
+import pwd
+import urllib2
 from uuid import uuid1
 
 import pandas as pd
@@ -23,29 +27,61 @@ def safe_encode(x):
         return prov.Literal(x, prov.XSD['float'])
     return prov.Literal(json.dumps(x), prov.XSD['string'])
 
+def get_url_hash(url):
+    """Generate a sha512 hash of the contents of a URL
+    """
+    remote = urllib2.urlopen(url)
+    urlhash = sha512()
+    total_read = 0
+    while True:
+        data = remote.read(4096)
+        total_read += 4096
+        if not data:
+            break
+        urlhash.update(data)
+    return urlhash.hexdigest()
+
 def csv2provgraph(filename, n_rows=None):
     """
     filename: path to file
     namespace: prov.Namespace instance to map column names to
     n_rows: number of rows to process
     """
-    nidm = prov.Namespace('nidm', 'http://nidm.nidash.org/#')
+    nidm = prov.Namespace('nidm', 'http://nidm.nidash.org/terms/')
     niiri = prov.Namespace('niiri', 'http://nidm.nidash.org/iri/')
+    foaf = prov.Namespace("foaf","http://xmlns.com/foaf/0.1/")
 
     # create a new graph
     g = prov.ProvBundle()
     g.add_namespace(nidm)
     g.add_namespace(niiri)
+    g.add_namespace(foaf)
 
     # uuid method
     get_id = lambda : uuid1().hex
 
+    # url prov:entity
+    url_entity = g.entity(niiri[get_id()])
+    url_entity.add_extra_attributes({prov.PROV['type']: nidm['csv_file'],
+                                     nidm['sha512']: get_url_hash(filename),
+                                     prov.PROV["location"]:
+                                         prov.Literal(filename,
+                                                      prov.XSD['AnyURI'])})
     # csv prov:collection
     csv_id = get_id()
     csv_collection = g.collection(niiri[csv_id])
-    csv_collection.add_extra_attributes({prov.PROV['type']: nidm['csv_file'],
+    csv_collection.add_extra_attributes({prov.PROV['type']: nidm['csv_collection'],
                                          prov.PROV['label']: filename}
                                        )
+    g.wasDerivedFrom(csv_collection, url_entity)
+    a0 = g.activity(niiri[get_id()], startTime=dt.isoformat(dt.utcnow()))
+    user_agent = g.agent(niiri[get_id()],
+                         {prov.PROV["type"]: prov.PROV["Person"],
+                          prov.PROV["label"]: pwd.getpwuid(os.geteuid()).pw_name,
+                          foaf["name"]: pwd.getpwuid(os.geteuid()).pw_name})
+    g.wasAssociatedWith(a0, user_agent, None, None,
+                        {prov.PROV["Role"]: "LoggedInUser"})
+    g.wasGeneratedBy(csv_collection, a0)
 
     data = pd.read_csv(filename, na_values=["N/A", "pending", -999])
 
