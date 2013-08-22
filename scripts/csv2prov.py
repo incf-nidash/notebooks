@@ -122,8 +122,6 @@ if __name__ == "__main__":
                         help='Graph IRI to store the triples')
 
     args = parser.parse_args()
-    if args.output_dir is None:
-        args.output_dir = os.getcwd()
 
     graph = csv2provgraph(args.url)
     upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri)
