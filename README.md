@@ -1,4 +1,4 @@
-IPython Notebooks
+NI-DM IPython Notebooks
 =================
 
 This folder contains a collection of IPython Notebooks describing the NIDASH Data Model (NI-DM), as well as example scripts for creating DI-DM documents.
