@@ -486,6 +486,8 @@ if __name__ == "__main__":
                         action="store_true", help='Anonymize subject ids')
     parser.add_argument('-n', '--hostname', type=str,
                         help='Hostname for file url')
+    parser.add_argument('-u', '--upload', dest="upload",
+                        action="store_true", help='Upload to triplestore')
 
     args = parser.parse_args()
     if args.output_dir is None:
@@ -496,5 +498,6 @@ if __name__ == "__main__":
         new_id = uuid.uuid4().hex
     graph, old_id = to_graph(args.subject_dir, args.project_id, args.output_dir,
                              args.hostname, new_id=new_id)
-    upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri,
-                 old_id=old_id, new_id=new_id)
+    if args.upload:
+        upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri,
+                     old_id=old_id, new_id=new_id)
