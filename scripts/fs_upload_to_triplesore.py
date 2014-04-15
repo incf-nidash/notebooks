@@ -293,7 +293,7 @@ def create_entity(graph, fs_subject_id, filepath, hostname):
     url_get = prov.URIRef("http://computor.mit.edu:10101/file?file_uri=%s" % url)
     obj_attr = [(prov.PROV["label"], filename),
                 (fs["relative_path"], "%s" % relpath),
-                (prov.PROV["atLocation"], url),
+                (prov.PROV["location"], prov.URIRef(url)),
                 (crypto["md5"], "%s" % file_md5_hash),
                 (crypto["sha"], "%s" % file_sha512_hash)
                 ]
@@ -330,7 +330,7 @@ def encode_fs_directory(g, basedir, project_id, subject_id, hostname=None,
     if hostname == None:
         hostname = getfqdn()
     url = "file://%s%s" % (hostname, os.path.abspath(basedir))
-    directory_id.add_extra_attributes({prov.PROV['atLocation']: prov.URIRef(url)})
+    directory_id.add_extra_attributes({prov.PROV['location']: prov.URIRef(url)})
     g.wasDerivedFrom(fsdir_collection, directory_id)
 
     a0 = g.activity(niiri[uuid.uuid1().hex], startTime=dt.isoformat(dt.utcnow()))
@@ -398,7 +398,6 @@ def to_graph(subject_specific_dir, project_id, output_dir, hostname,
     basedir = os.path.abspath(subject_specific_dir)
     subject_id = basedir.rstrip(os.path.sep).split(os.path.sep)[-1]
 
-    # location of the ProvToolBox commandline conversion utility
     graph = prov.ProvBundle()
     graph.add_namespace(foaf)
     graph.add_namespace(dcterms)
