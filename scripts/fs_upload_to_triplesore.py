@@ -462,8 +462,9 @@ def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None,
         %s
         }
         }
-        """ % (uri, ('\n'.join(stmts[counter:endcounter])).replace(old_id,
-                                                                   new_id))
+        """ % (uri, '\n'.join(stmts[counter:endcounter]))
+        if new_id is not None:
+            query = query.replace(old_id, new_id)
         data = {'query': query}
         result = session.post(endpoint, data=data)
         print(result)
