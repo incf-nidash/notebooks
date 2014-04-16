@@ -39,6 +39,9 @@ niiri = prov.Namespace("niiri", "http://iri.nidash.org/")
 obo = prov.Namespace("obo", "http://purl.obolibrary.org/obo/")
 nif = prov.Namespace("nif", "http://neurolex.org/wiki/")
 crypto = prov.Namespace("crypto", "http://www.w3.org/2000/10/swap/crypto#")
+crypto = prov.Namespace("crypto",
+                        ("http://id.loc.gov/vocabulary/preservation/"
+                         "cryptographicHashFunctions/"))
 
 # map FreeSurfer filename parts
 fs_file_map = [('T1', [nif["nlx_inv_20090243"]]),  # 3d T1 weighted scan
@@ -295,7 +298,7 @@ def create_entity(graph, fs_subject_id, filepath, hostname):
                 (fs["relative_path"], "%s" % relpath),
                 (prov.PROV["location"], prov.URIRef(url)),
                 (crypto["md5"], "%s" % file_md5_hash),
-                (crypto["sha"], "%s" % file_sha512_hash)
+                (crypto["sha512"], "%s" % file_sha512_hash)
                 ]
 
     for key in fstypes:
