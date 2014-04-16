@@ -232,7 +232,7 @@ def parse_stats(g, fs_stat_file, entity_uri):
                                    rdflib.RDFS['label'],
                                    rdflib.Literal(measure['description'])))
                 measure_graph.add((measure_uri,
-                                   nidm['units'].rdf_representation(),
+                                   nidm['unitsLabel'].rdf_representation(),
                                    rdflib.Literal(measure['units'])))
             obj_attr.append((nidm["anatomicalAnnotation"], struct_uri))
             if str(measure['units']) in unknown_units and \
@@ -263,7 +263,7 @@ def parse_stats(g, fs_stat_file, entity_uri):
                                        rdflib.RDFS['label'],
                                        rdflib.Literal(column_info['description'])))
                     measure_graph.add((measure_uri,
-                                       nidm['units'].rdf_representation(),
+                                       nidm['unitsLabel'].rdf_representation(),
                                        rdflib.Literal(column_info['units'])))
         id = get_id()
         if struct_uri in struct_info:
@@ -328,7 +328,7 @@ def encode_fs_directory(g, basedir, project_id, subject_id, hostname=None,
     fsdir_collection = g.collection(niiri[collection_hash])
     fsdir_collection.add_extra_attributes({prov.PROV['type']: fs['SubjectDirectory'],
                                            nidm['tag']: project_id,
-                                           fs['ID']: subject_id})
+                                           fs['subjectID']: subject_id})
     directory_id = g.entity(niiri[uuid.uuid1().hex])
     if hostname == None:
         hostname = getfqdn()
@@ -437,7 +437,8 @@ def to_graph(subject_specific_dir, project_id, output_dir, hostname,
         map_graph.serialize('mapper.ttl', format='turtle')
     return graph, old_id
 
-def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None):
+def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None,
+                 max_stmts=100):
     import requests
     from requests.auth import HTTPDigestAuth
 
@@ -450,7 +451,6 @@ def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None):
     session.headers = {'Accept': 'text/html'}  # HTML from SELECT queries
 
     counter = 0
-    max_stmts = 100
     stmts = graph.rdf().serialize(format='nt').splitlines()
     N = len(stmts)
     while (counter < N):
@@ -486,10 +486,12 @@ if __name__ == "__main__":
                         help='Output directory')
     parser.add_argument('-a', '--anonymize', dest="anonymize",
                         action="store_true", help='Anonymize subject ids')
-    parser.add_argument('-n', '--hostname', type=str,
-                        help='Hostname for file url')
     parser.add_argument('-u', '--upload', dest="upload",
                         action="store_true", help='Upload to triplestore')
+    parser.add_argument('-n', '--num_statements', dest="max_stmts", type=int,
+                        default=100,
+                        help=('Maximum statements to upload to triplestore in '
+                              'one request'))
 
     args = parser.parse_args()
     if args.output_dir is None:
@@ -502,4 +504,4 @@ if __name__ == "__main__":
                              args.hostname, new_id=new_id)
     if args.upload:
         upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri,
-                     old_id=old_id, new_id=new_id)
+                     old_id=old_id, new_id=new_id, max_stmts=args.max_stmts)
