@@ -293,7 +293,6 @@ def create_entity(graph, fs_subject_id, filepath, hostname):
         print('Empty file: %s' % filepath)
 
     url = "file://%s%s" % (hostname, filepath)
-    url_get = prov.URIRef("http://computor.mit.edu:10101/file?file_uri=%s" % url)
     obj_attr = [(prov.PROV["label"], filename),
                 (fs["relative_path"], "%s" % relpath),
                 (prov.PROV["location"], prov.URIRef(url)),
@@ -319,8 +318,7 @@ def create_entity(graph, fs_subject_id, filepath, hostname):
     return graph.entity(niiri[id], obj_attr)
 
 
-def encode_fs_directory(g, basedir, project_id, subject_id, hostname=None,
-                        n_items=100000):
+def encode_fs_directory(g, basedir, project_id, subject_id, n_items=100000):
     """ Convert a FreeSurfer directory to a PROV graph
     """
     # directory collection/catalog
@@ -330,8 +328,7 @@ def encode_fs_directory(g, basedir, project_id, subject_id, hostname=None,
                                            nidm['tag']: project_id,
                                            fs['subjectID']: subject_id})
     directory_id = g.entity(niiri[uuid.uuid1().hex])
-    if hostname == None:
-        hostname = getfqdn()
+    hostname = getfqdn()
     url = "file://%s%s" % (hostname, os.path.abspath(basedir))
     directory_id.add_extra_attributes({prov.PROV['location']: prov.URIRef(url)})
     g.wasDerivedFrom(fsdir_collection, directory_id)
@@ -395,8 +392,7 @@ def encode_fs_directory(g, basedir, project_id, subject_id, hostname=None,
     return g
 
 
-def to_graph(subject_specific_dir, project_id, output_dir, hostname,
-             new_id=None):
+def to_graph(subject_specific_dir, project_id, output_dir, new_id=None):
     # location of FreeSurfer $SUBJECTS_DIR
     basedir = os.path.abspath(subject_specific_dir)
     subject_id = basedir.rstrip(os.path.sep).split(os.path.sep)[-1]
@@ -411,8 +407,7 @@ def to_graph(subject_specific_dir, project_id, output_dir, hostname,
     graph.add_namespace(nif)
     graph.add_namespace(crypto)
 
-    graph = encode_fs_directory(graph, basedir, project_id, subject_id,
-                                hostname=hostname)
+    graph = encode_fs_directory(graph, basedir, project_id, subject_id)
     provn = graph.get_provn()
     old_id = subject_id
     if new_id:
@@ -493,6 +488,10 @@ if __name__ == "__main__":
                         default=100,
                         help=('Maximum statements to upload to triplestore in '
                               'one request'))
+    parser.add_argument('-c', '--csv', dest="csv_file", type=str,
+                        help='CSV file for additional participant metadata')
+    parser.add_argument('--id_col_name', dest="col_name", type=str,
+                        help='Column name for subject id in CSV file')
 
     args = parser.parse_args()
     if args.output_dir is None:
@@ -502,7 +501,7 @@ if __name__ == "__main__":
     if args.anonymize:
         new_id = uuid.uuid4().hex
     graph, old_id = to_graph(args.subject_dir, args.project_id, args.output_dir,
-                             args.hostname, new_id=new_id)
+                             new_id=new_id)
     if args.upload:
         upload_graph(graph, endpoint=args.endpoint, uri=args.graph_iri,
                      old_id=old_id, new_id=new_id, max_stmts=args.max_stmts)
