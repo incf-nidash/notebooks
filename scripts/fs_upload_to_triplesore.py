@@ -208,7 +208,7 @@ def parse_stats(g, fs_stat_file, entity_uri):
     statheader_collection = g.entity(get_id())
     attributes = {prov.PROV['type']: fs['StatFileHeader']}
     for key, value in header.items():
-        attributes[fs[key]] = value
+        attributes[fs[key.replace('.c', '-c')]] = value
     statheader_collection.add_extra_attributes(attributes)
     # measures
     struct_info = {}
@@ -219,7 +219,7 @@ def parse_stats(g, fs_stat_file, entity_uri):
     unknown_units = set(('unitless', 'NA'))
     for measure in measures:
         obj_attr = []
-        struct_uri = fs[measure['structure']]
+        struct_uri = fs[measure['structure'].replace('.', '-')]
         if measure['source'] == 'Header':
             measure_name = measure['name']
             if measure_name not in measure_list:
@@ -435,6 +435,7 @@ def to_graph(subject_specific_dir, project_id, output_dir, new_id=None):
 def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None,
                  max_stmts=100):
     import requests
+    from time import sleep
     from requests.auth import HTTPDigestAuth
 
     # connection params for secure endpoint
@@ -448,6 +449,7 @@ def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None,
     counter = 0
     stmts = graph.rdf().serialize(format='nt').splitlines()
     N = len(stmts)
+    max_tries = 10
     while (counter < N):
         endcounter = min(N, counter + max_stmts)
         query = """
@@ -462,7 +464,14 @@ def upload_graph(graph, endpoint=None, uri=None, old_id=None, new_id=None,
             query = query.replace(old_id, new_id)
         data = {'query': query}
         result = session.post(endpoint, data=data)
-        print(result)
+        num_tries = 0
+        while result.status_code != requests.codes.ok and num_tries < max_tries:
+            sleep(5)
+            result = session.post(endpoint, data=data)
+            num_tries += 1
+        if num_tries == max_tries:
+            raise IOError('Could not upload some statements: %s' %
+                          result.status_code)
         counter = endcounter
     print('Submitted %d statemnts' % N)
 
