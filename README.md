@@ -3,6 +3,10 @@ NI-DM IPython Notebooks
 
 This folder contains a collection of IPython Notebooks describing the NIDASH Data Model (NI-DM), as well as example scripts for creating DI-DM documents.
 
+WARNING:
+--------
+A number of notebooks used for training on nidm related topics are now [here](https://github.com/incf-nidash/nidm-training) 
+
 Each notebook can be viewed in several ways.  
 Note: not all notebooks are designed for the SlideViewer
 
