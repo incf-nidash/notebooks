@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<prov:document xmlns:prov="http://www.w3.org/ns/prov#" xmlns:ns2="http://openprovenance.org/collection#" xmlns:ns3="http://openprovenance.org/validation#" xmlns:nidm="http://nidm.nidash.org/" xmlns:spm="www.fil.ion.ucl.ac.uk/spm/" xmlns:neurolex="http://neurolex.org/wiki/Main_Page/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <prov:entity xmlns="" prov:id="height_threshold_param1">
+        <prov:label>Height Threshold</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:height_threshold</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:t-statistic</prov:type>
+        <prov:value xsi:type="xsd:float">3.1</prov:value>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="height_threshold_param2">
+        <prov:label>Height_Threshold</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:height_threshold</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_statistic</prov:type>
+        <prov:value xsi:type="xsd:float">0.0010</prov:value>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="height_threshold_collection">
+        <prov:type xsi:type="xsd:QName">spm:Height_Threshold</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="height_threshold_collection"/>
+        <prov:entity xmlns="" prov:ref="height_threshold_param1"/>
+    </prov:hadMember>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="height_threshold_collection"/>
+        <prov:entity xmlns="" prov:ref="height_threshold_param2"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="extent_threshold_param1">
+        <prov:label>Extent Threshold</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:extent_threshold</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:threhold</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:voxel</prov:type>
+        <prov:value xsi:type="xsd:int">0</prov:value>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="extent_threshold_param2">
+        <prov:label>Extent_Threshold</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:extent_threshold</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_statistic</prov:type>
+        <prov:value xsi:type="xsd:float">1.0</prov:value>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="extent_threshold_collection">
+        <prov:type xsi:type="xsd:QName">spm:Extent_Threshold</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="extent_threshold_collection"/>
+        <prov:entity xmlns="" prov:ref="extent_threshold_param1"/>
+    </prov:hadMember>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="extent_threshold_collection"/>
+        <prov:entity xmlns="" prov:ref="extent_threshold_param2"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="expected_voxels">
+        <prov:label>Expected_voxels_per_cluster</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:expected_voxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:VolumeInVoxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:voxel</prov:type>
+        <prov:value xsi:type="xsd:float">60.632</prov:value>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="expected_clusters">
+        <prov:label>Expected_number_of_clusters</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:expected_clusters</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:voxel</prov:type>
+        <prov:value xsi:type="xsd:float">9.51</prov:value>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="spm_results_metadata">
+        <prov:type xsi:type="xsd:QName">spm:spm_results_metadata</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="spm_results_metadata"/>
+        <prov:entity xmlns="" prov:ref="height_threshold_collection"/>
+    </prov:hadMember>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="spm_results_metadata"/>
+        <prov:entity xmlns="" prov:ref="extent_threshold_collection"/>
+    </prov:hadMember>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="spm_results_metadata"/>
+        <prov:entity xmlns="" prov:ref="expected_voxels"/>
+    </prov:hadMember>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="spm_results_metadata"/>
+        <prov:entity xmlns="" prov:ref="expected_clusters"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="set_level_collection">
+        <prov:type xsi:type="xsd:QName">spm:set-level</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="cluster_level_stats">
+        <prov:type xsi:type="xsd:QName">spm:cluster-level</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="coordinates">
+        <prov:type xsi:type="xsd:QName">spm:mm_mm_mm</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="peak_level_stats">
+        <prov:type xsi:type="xsd:QName">spm:peak-level</prov:type>
+        <prov:type xsi:type="xsd:QName">prov:Collection</prov:type>
+    </prov:entity>
+    <prov:entity xmlns="" prov:id="coord_0">
+        <prov:label>mm_mm_mm</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:coordinate</prov:type>
+        <prov:type xsi:type="xsd:QName">nidm:units</prov:type>
+        <prov:value xsi:type="xsd:string">[48, 42,0]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="coordinates"/>
+        <prov:entity xmlns="" prov:ref="coord_0"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_0">
+        <prov:label>cluster_level_Ke</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:VolumeInVoxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster-level</prov:type>
+        <prov:value xsi:type="xsd:int">99</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_0"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_0"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_0">
+        <prov:label>peak_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.0</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_0"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="peak_1">
+        <prov:label>peak_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.728</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_1"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_1"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_2">
+        <prov:label>peak_level_FDRcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FDR</prov:type>
+        <prov:value xsi:type="xsd:float">0.464</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_2"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_2"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="set_level_c_0">
+        <prov:label>set_level_c</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:set-level</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster</prov:type>
+        <prov:value xsi:type="xsd:int">7</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="set_level_collection"/>
+        <prov:entity xmlns="" prov:ref="set_level_c_0"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="set_level_c_0"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_3">
+        <prov:label>peak_level_T</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:t-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.8</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_3"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_1">
+        <prov:label>cluster_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.187</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_1"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_1"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_4">
+        <prov:label>peak_level_Z</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:z-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.79</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_4"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_2">
+        <prov:label>cluster_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.831</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_2"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_2"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="set_level_p_1">
+        <prov:label>set_level_p</prov:label>
+        <prov:type xsi:type="xsd:QName">spm:set-level</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.836</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="set_level_collection"/>
+        <prov:entity xmlns="" prov:ref="set_level_p_1"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="set_level_p_1"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_0"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="coord_1">
+        <prov:label>mm_mm_mm</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:coordinate</prov:type>
+        <prov:type xsi:type="xsd:QName">nidm:units</prov:type>
+        <prov:value xsi:type="xsd:string">[54, 36,-12]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="coordinates"/>
+        <prov:entity xmlns="" prov:ref="coord_1"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_3">
+        <prov:label>cluster_level_Ke</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:VolumeInVoxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster-level</prov:type>
+        <prov:value xsi:type="xsd:string">[]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_3"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_3"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_1"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_5">
+        <prov:label>peak_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.0</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_5"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="peak_6">
+        <prov:label>peak_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.994</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_6"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_6"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_1"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_7">
+        <prov:label>peak_level_FDRcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FDR</prov:type>
+        <prov:value xsi:type="xsd:float">0.904</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_7"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_7"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_1"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_8">
+        <prov:label>peak_level_T</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:t-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.34</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_8"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_4">
+        <prov:label>cluster_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:string"></prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_4"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_4"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_1"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_9">
+        <prov:label>peak_level_Z</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:z-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.33</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_9"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_5">
+        <prov:label>cluster_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:string">[]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_5"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_5"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_1"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="coord_2">
+        <prov:label>mm_mm_mm</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:coordinate</prov:type>
+        <prov:type xsi:type="xsd:QName">nidm:units</prov:type>
+        <prov:value xsi:type="xsd:string">[-20, 52,32]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="coordinates"/>
+        <prov:entity xmlns="" prov:ref="coord_2"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_6">
+        <prov:label>cluster_level_Ke</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:VolumeInVoxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster-level</prov:type>
+        <prov:value xsi:type="xsd:int">380</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_6"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_6"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_2"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_10">
+        <prov:label>peak_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.0</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_10"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="peak_11">
+        <prov:label>peak_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.756</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_11"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_11"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_2"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_12">
+        <prov:label>peak_level_FDRcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FDR</prov:type>
+        <prov:value xsi:type="xsd:float">0.464</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_12"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_12"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_2"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_13">
+        <prov:label>peak_level_T</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:t-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.78</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_13"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_7">
+        <prov:label>cluster_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.016</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_7"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_7"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_2"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_14">
+        <prov:label>peak_level_Z</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:z-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.76</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_14"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_8">
+        <prov:label>cluster_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.145</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_8"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_8"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_2"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="coord_3">
+        <prov:label>mm_mm_mm</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:coordinate</prov:type>
+        <prov:type xsi:type="xsd:QName">nidm:units</prov:type>
+        <prov:value xsi:type="xsd:string">[54, 36,-12]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="coordinates"/>
+        <prov:entity xmlns="" prov:ref="coord_3"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_9">
+        <prov:label>cluster_level_Ke</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:VolumeInVoxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster-level</prov:type>
+        <prov:value xsi:type="xsd:string">[]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_9"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_9"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_3"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_15">
+        <prov:label>peak_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.0</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_15"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="peak_16">
+        <prov:label>peak_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.994</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_16"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_16"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_3"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_17">
+        <prov:label>peak_level_FDRcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FDR</prov:type>
+        <prov:value xsi:type="xsd:float">0.904</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_17"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_17"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_3"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_18">
+        <prov:label>peak_level_T</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:t-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.34</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_18"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_10">
+        <prov:label>cluster_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:string">[]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_10"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_10"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_3"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_19">
+        <prov:label>peak_level_Z</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:z-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.33</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_19"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_11">
+        <prov:label>cluster_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:string">[]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_11"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_11"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_3"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="coord_4">
+        <prov:label>mm_mm_mm</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:coordinate</prov:type>
+        <prov:type xsi:type="xsd:QName">nidm:units</prov:type>
+        <prov:value xsi:type="xsd:string">[38, 52,-30]</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="coordinates"/>
+        <prov:entity xmlns="" prov:ref="coord_4"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_12">
+        <prov:label>cluster_level_Ke</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:VolumeInVoxels</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:cluster-level</prov:type>
+        <prov:value xsi:type="xsd:int">12</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_12"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_12"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_4"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_20">
+        <prov:label>peak_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.0010</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_20"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="peak_21">
+        <prov:label>peak_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.997</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_21"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_21"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_4"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_22">
+        <prov:label>peak_level_FDRcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FDR</prov:type>
+        <prov:value xsi:type="xsd:float">0.904</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_22"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="peak_22"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_4"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_23">
+        <prov:label>peak_level_T</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:t-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.3</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_23"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_13">
+        <prov:label>cluster_level_Uncorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:uncorrected_p-value</prov:type>
+        <prov:value xsi:type="xsd:float">0.663</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_13"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_13"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_4"/>
+    </prov:wasDerivedFrom>
+    <prov:entity xmlns="" prov:id="peak_24">
+        <prov:label>peak_level_Z</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:z-statistic</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:peak-level</prov:type>
+        <prov:value xsi:type="xsd:float">3.29</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="peak_level_stats"/>
+        <prov:entity xmlns="" prov:ref="peak_24"/>
+    </prov:hadMember>
+    <prov:entity xmlns="" prov:id="cluster_14">
+        <prov:label>cluster_level_FWEcorr_p</prov:label>
+        <prov:type xsi:type="xsd:QName">neurolex:p-value</prov:type>
+        <prov:type xsi:type="xsd:QName">neurolex:FWE</prov:type>
+        <prov:value xsi:type="xsd:float">0.998</prov:value>
+    </prov:entity>
+    <prov:hadMember>
+        <prov:collection xmlns="" prov:ref="cluster_level_stats"/>
+        <prov:entity xmlns="" prov:ref="cluster_14"/>
+    </prov:hadMember>
+    <prov:wasDerivedFrom>
+        <prov:generatedEntity xmlns="" prov:ref="cluster_14"/>
+        <prov:usedEntity xmlns="" prov:ref="coord_4"/>
+    </prov:wasDerivedFrom>
+</prov:document>
